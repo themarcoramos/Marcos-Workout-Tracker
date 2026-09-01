@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate PPL - Phases</title>
+    
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .header-container {
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* A quick back button to return home */
+        .back-link {
+            color: #888888;
+            text-decoration: none;
+            font-size: 0.95rem;
+            position: absolute;
+            left: 0;
+            top: 5px;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #0077ed;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #444444; 
+            margin: 0 auto 30px auto;
+            width: 75%;
+        }
+
+        .phases-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px; /* Space between buttons */
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Shiny Blue Button (Adapted for stacked text) */
+        .shiny-btn {
+            background: linear-gradient(135deg, #0051a8, #0077ed, #00d2ff);
+            background-size: 200% auto;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 119, 237, 0.5), inset 0 1px 2px rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+            
+            /* This forces the text lines to stack neatly */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px; 
+        }
+
+        .shiny-btn:hover {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 119, 237, 0.7), inset 0 1px 2px rgba(255,255,255,0.6);
+        }
+
+        /* Custom text sizing for inside the buttons */
+        .phase-num {
+            font-size: 1.4rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .phase-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .phase-desc {
+            font-size: 0.85rem;
+            font-weight: normal;
+            opacity: 0.9; /* Makes this line slightly softer visually */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="index.html" class="back-link">← Back</a>
+        <h1>Ultimate PPL Program</h1>
+        <hr>
+    </div>
+
+    <main class="phases-list">
+        <!-- Button 1 -->
+        <button type="button" class="shiny-btn">
+            <span class="phase-num">PHASE 1</span>
+            <span class="phase-title">BASE HYPERTROPHY</span>
+            <span class="phase-desc">MODERATE VOLUME, MODERATE INTENSITY</span>
+        </button>
+
+        <!-- Button 2 -->
+        <button type="button" class="shiny-btn">
+            <span class="phase-num">PHASE 2</span>
+            <span class="phase-title">MAXIMUM EFFORT</span>
+            <span class="phase-desc">LOW VOLUME, HIGH INTENSITY</span>
+        </button>
+
+        <!-- Button 3 -->
+        <button type="button" class="shiny-btn">
+            <span class="phase-num">PHASE 3</span>
+            <span class="phase-title">SUPER COMPENSATION</span>
+            <span class="phase-desc">HIGH VOLUME, MODERATE INTENSITY</span>
+        </button>
+    </main>
+
+</body>
+</html>

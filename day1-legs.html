@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 - Legs</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-container { text-align: center; width: 100%; max-width: 600px; margin-bottom: 30px; position: relative; }
+        .back-link { color: #888888; text-decoration: none; font-size: 0.95rem; position: absolute; left: 0; top: 5px; }
+        .back-link:hover { color: #0077ed; }
+        
+        h1 { font-size: 2rem; font-weight: bold; margin-bottom: 5px; }
+        hr { border: none; height: 1px; background-color: #444444; margin: 20px auto; width: 100%; }
+
+        .workout-list {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Exercise Card Styling */
+        .exercise-card {
+            background-color: #111111;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .exercise-title-area { margin-bottom: 15px; }
+        
+        /* The Dropdown Menu */
+        .swap-dropdown {
+            width: 100%;
+            background-color: #1c1c1e;
+            color: #0077ed;
+            border: 1px solid #0077ed;
+            padding: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+
+        .exercise-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #aaaaaa;
+            margin-bottom: 15px;
+            background: #0a0a0a;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .exercise-notes { font-size: 0.85rem; color: #888888; font-style: italic; margin-bottom: 15px; }
+
+        /* Logging Area */
+        .logging-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+        
+        .log-input {
+            width: 70px;
+            background: #222222;
+            color: #ffffff;
+            border: 1px solid #444;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="week1.html" class="back-link">← Back</a>
+        <h1>DAY 1: LEGS</h1>
+        <hr>
+    </div>
+
+    <main class="workout-list">
+        
+        <!-- EXERCISE 1 -->
+        <div class="exercise-card">
+            <select class="swap-dropdown" id="sub-squat" onchange="savePreference('sub-squat')">
+                <option value="Squat">Squat (Primary)</option>
+                <option value="Hack Squat">Hack Squat (Sub 1)</option>
+                <option value="DB Bulgarian Split Squat">DB Bulgarian Split Squat (Sub 2)</option>
+            </select>
+            
+            <div class="exercise-stats">
+                <span><strong>Warm-up:</strong> 3-4 Sets</span>
+                <span><strong>Working:</strong> 1 Set</span>
+                <span><strong>Reps:</strong> 2-4</span>
+                <span><strong>RPE:</strong> 8-9</span>
+                <span><strong>Rest:</strong> ~3-4 min</span>
+            </div>
+            
+            <p class="exercise-notes">Sit back and down, keep your upper back tight to the bar.</p>
+            
+            <div class="logging-area">
+                <label>Weight (lbs):</label>
+                <input type="number" class="log-input" placeholder="0">
+            </div>
+        </div>
+
+        <!-- EXERCISE 2 -->
+        <div class="exercise-card">
+            <select class="swap-dropdown" id="sub-pause-squat" onchange="savePreference('sub-pause-squat')">
+                <option value="Pause Squat (Back off)">Pause Squat (Primary)</option>
+                <option value="Pause Hack Squat">Pause Hack Squat (Sub 1)</option>
+                <option value="Pause DB Bulgarian Split Squat">Pause DB Bulgarian Split Squat (Sub 2)</option>
+            </select>
+            
+            <div class="exercise-stats">
+                <span><strong>Working:</strong> 2 Sets</span>
+                <span><strong>Reps:</strong> 5</span>
+                <span><strong>RPE:</strong> 8-9</span>
+                <span><strong>Rest:</strong> ~3-4 min</span>
+            </div>
+            
+            <p class="exercise-notes">Drop the weight by ~25% from your top set. 2 second pause.</p>
+            
+            <div class="logging-area">
+                <label>Weight (lbs):</label>
+                <input type="number" class="log-input" placeholder="0">
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        // THE "SAVE MY PREFERENCE" ENGINE
+        
+        // 1. When the page loads, check if the user has saved preferences
+        document.addEventListener("DOMContentLoaded", () => {
+            const dropdowns = document.querySelectorAll('.swap-dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const savedPreference = localStorage.getItem(dropdown.id);
+                if (savedPreference) {
+                    dropdown.value = savedPreference; // Auto-load their saved exercise
+                }
+            });
+        });
+
+        // 2. When the user changes an exercise, save it to their phone
+        function savePreference(dropdownId) {
+            const dropdown = document.getElementById(dropdownId);
+            localStorage.setItem(dropdownId, dropdown.value);
+            console.log("Saved preference for " + dropdownId + ": " + dropdown.value);
+        }
+    </script>
+
+</body>
+</html>

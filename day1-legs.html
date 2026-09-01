@@ -59,14 +59,15 @@
             cursor: pointer;
         }
         
+        /* Updated Form Button (No Emoji) */
         .yt-btn {
             background: linear-gradient(135deg, #a80000, #ed0000);
             color: white;
             text-decoration: none;
-            padding: 10px 15px;
+            padding: 10px 18px;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             white-space: nowrap;
             box-shadow: 0 2px 8px rgba(237, 0, 0, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -77,7 +78,6 @@
 
         .exercise-notes { font-size: 0.85rem; color: #888888; font-style: italic; margin-bottom: 15px; text-align: center; }
 
-        /* Set Tracking Table */
         .sets-table {
             width: 100%;
             border-collapse: collapse;
@@ -118,26 +118,25 @@
         <!-- EXERCISE 1: SQUAT -->
         <div class="exercise-card">
             <div class="card-header">
-                <select class="swap-dropdown" id="sub-squat" onchange="saveData(this)">
-                    <option value="Squat">Squat</option>
-                    <option value="Hack Squat">Hack Squat</option>
-                    <option value="DB Bulgarian Split Squat">DB Bulgarian Split</option>
+                <!-- Notice data-link-target maps this dropdown to the button ID below -->
+                <select class="swap-dropdown" id="sub-squat" data-link-target="link-ex1" onchange="saveData(this)">
+                    <option value="Squat" data-url="https://youtube.com/results?search_query=Squat">Squat</option>
+                    <option value="Hack Squat" data-url="https://youtube.com/results?search_query=Hack+Squat">Hack Squat</option>
+                    <option value="DB Bulgarian Split Squat" data-url="https://youtube.com/results?search_query=Bulgarian+Split">DB Bulgarian Split</option>
                 </select>
-                <a href="https://youtube.com/results?search_query=Squat+form" target="_blank" class="yt-btn">🎥 Form</a>
+                <a href="#" target="_blank" class="yt-btn" id="link-ex1">Form</a>
             </div>
             
             <p class="exercise-notes">Sit back and down, keep your upper back tight to the bar. Rest ~3-4 min.</p>
             
             <table class="sets-table">
                 <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
-                <!-- Warm up -->
                 <tr>
                     <td>-</td><td class="type-warmup">Warm</td><td>3-4 Sets</td><td>-</td>
                     <td><input type="number" class="log-input" id="ex1-warm-w" oninput="saveData(this)"></td>
                     <td><input type="number" class="log-input" id="ex1-warm-rpe" oninput="saveData(this)"></td>
                     <td><input type="checkbox" class="checkbox-custom" id="ex1-warm-done" onchange="saveData(this)"></td>
                 </tr>
-                <!-- Working -->
                 <tr>
                     <td>1</td><td class="type-work">Work</td><td>2-4 Reps</td><td>8-9</td>
                     <td><input type="number" class="log-input" id="ex1-work1-w" oninput="saveData(this)"></td>
@@ -150,12 +149,12 @@
         <!-- EXERCISE 2: PAUSE SQUAT -->
         <div class="exercise-card">
             <div class="card-header">
-                <select class="swap-dropdown" id="sub-pause-squat" onchange="saveData(this)">
-                    <option value="Pause Squat">Pause Squat</option>
-                    <option value="Pause Hack Squat">Pause Hack Squat</option>
-                    <option value="Pause DB Bulgarian Split Squat">Pause DB Bulgarian</option>
+                <select class="swap-dropdown" id="sub-pause-squat" data-link-target="link-ex2" onchange="saveData(this)">
+                    <option value="Pause Squat" data-url="https://youtube.com/results?search_query=Pause+Squat">Pause Squat</option>
+                    <option value="Pause Hack Squat" data-url="https://youtube.com/results?search_query=Pause+Hack+Squat">Pause Hack Squat</option>
+                    <option value="Pause DB Bulgarian Split Squat" data-url="https://youtube.com/results?search_query=Pause+Bulgarian">Pause DB Bulgarian</option>
                 </select>
-                <a href="https://youtube.com/results?search_query=Pause+Squat+form" target="_blank" class="yt-btn">🎥 Form</a>
+                <a href="#" target="_blank" class="yt-btn" id="link-ex2">Form</a>
             </div>
             <p class="exercise-notes">Drop weight by ~25% from top set. 2 sec pause. Rest ~3-4 min.</p>
             
@@ -179,12 +178,12 @@
         <!-- EXERCISE 3: BARBELL RDL -->
         <div class="exercise-card">
             <div class="card-header">
-                <select class="swap-dropdown" id="sub-rdl" onchange="saveData(this)">
-                    <option value="Barbell RDL">Barbell RDL</option>
-                    <option value="DB RDL">DB RDL</option>
-                    <option value="45 Hyperextension">45 Hyperextension</option>
+                <select class="swap-dropdown" id="sub-rdl" data-link-target="link-ex3" onchange="saveData(this)">
+                    <option value="Barbell RDL" data-url="https://youtube.com/results?search_query=Barbell+RDL">Barbell RDL</option>
+                    <option value="DB RDL" data-url="https://youtube.com/results?search_query=DB+RDL">DB RDL</option>
+                    <option value="45 Hyperextension" data-url="https://youtube.com/results?search_query=45+Hyperextension">45 Hyperextension</option>
                 </select>
-                <a href="https://youtube.com/results?search_query=Barbell+RDL+form" target="_blank" class="yt-btn">🎥 Form</a>
+                <a href="#" target="_blank" class="yt-btn" id="link-ex3">Form</a>
             </div>
             <p class="exercise-notes">Maintain neutral lower back, set hips back. Rest ~2-3 min.</p>
             
@@ -220,12 +219,12 @@
         <!-- EXERCISE 4: WALKING LUNGE -->
         <div class="exercise-card">
             <div class="card-header">
-                <select class="swap-dropdown" id="sub-lunge" onchange="saveData(this)">
-                    <option value="Walking Lunge">Walking Lunge</option>
-                    <option value="DB Step-Up">DB Step-Up</option>
-                    <option value="Goblet Squat">Goblet Squat</option>
+                <select class="swap-dropdown" id="sub-lunge" data-link-target="link-ex4" onchange="saveData(this)">
+                    <option value="Walking Lunge" data-url="https://youtube.com/results?search_query=Walking+Lunge">Walking Lunge</option>
+                    <option value="DB Step-Up" data-url="https://youtube.com/results?search_query=DB+Step-Up">DB Step-Up</option>
+                    <option value="Goblet Squat" data-url="https://youtube.com/results?search_query=Goblet+Squat">Goblet Squat</option>
                 </select>
-                <a href="https://youtube.com/results?search_query=Walking+Lunge+form" target="_blank" class="yt-btn">🎥 Form</a>
+                <a href="#" target="_blank" class="yt-btn" id="link-ex4">Form</a>
             </div>
             <p class="exercise-notes">Take medium strides, minimize pushing off rear leg. Rest ~2-3 min.</p>
             
@@ -255,12 +254,12 @@
         <!-- EXERCISE 5: SEATED LEG CURL -->
         <div class="exercise-card">
             <div class="card-header">
-                <select class="swap-dropdown" id="sub-curl" onchange="saveData(this)">
-                    <option value="Seated Leg Curl">Seated Leg Curl</option>
-                    <option value="Lying Leg Curl">Lying Leg Curl</option>
-                    <option value="Nordic Ham Curl">Nordic Ham Curl</option>
+                <select class="swap-dropdown" id="sub-curl" data-link-target="link-ex5" onchange="saveData(this)">
+                    <option value="Seated Leg Curl" data-url="https://youtube.com/results?search_query=Seated+Leg+Curl">Seated Leg Curl</option>
+                    <option value="Lying Leg Curl" data-url="https://youtube.com/results?search_query=Lying+Leg+Curl">Lying Leg Curl</option>
+                    <option value="Nordic Ham Curl" data-url="https://youtube.com/results?search_query=Nordic+Ham+Curl">Nordic Ham Curl</option>
                 </select>
-                <a href="https://youtube.com/results?search_query=Seated+Leg+Curl+form" target="_blank" class="yt-btn">🎥 Form</a>
+                <a href="#" target="_blank" class="yt-btn" id="link-ex5">Form</a>
             </div>
             <p class="exercise-notes">Focus on squeezing hamstrings to move the weight. Rest ~1-2 min.</p>
             
@@ -296,14 +295,14 @@
         <!-- EXERCISE 6: LEG PRESS TOE PRESS -->
         <div class="exercise-card">
             <div class="card-header">
-                <select class="swap-dropdown" id="sub-calf" onchange="saveData(this)">
-                    <option value="Leg Press Toe Press">Leg Press Toe Press</option>
-                    <option value="Seated Calf Raise">Seated Calf Raise</option>
-                    <option value="Standing Calf Raise">Standing Calf Raise</option>
+                <select class="swap-dropdown" id="sub-calf" data-link-target="link-ex6" onchange="saveData(this)">
+                    <option value="Leg Press Toe Press" data-url="https://youtube.com/results?search_query=Leg+Press+Toe+Press">Leg Press Toe Press</option>
+                    <option value="Seated Calf Raise" data-url="https://youtube.com/results?search_query=Seated+Calf+Raise">Seated Calf Raise</option>
+                    <option value="Standing Calf Raise" data-url="https://youtube.com/results?search_query=Standing+Calf+Raise">Standing Calf Raise</option>
                 </select>
-                <a href="https://youtube.com/results?search_query=Leg+Press+Toe+Press" target="_blank" class="yt-btn">🎥 Form</a>
+                <a href="#" target="_blank" class="yt-btn" id="link-ex6">Form</a>
             </div>
-            <p class="exercise-notes">Press all the way to toes, stretch at bottom, don't bounce. Rest ~1-2 min.</p>
+            <p class="exercise-notes">Press to toes, stretch at bottom, don't bounce. Rest ~1-2 min.</p>
             
             <table class="sets-table">
                 <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
@@ -343,12 +342,12 @@
         <!-- EXERCISE 7: DECLINE CRUNCH -->
         <div class="exercise-card">
             <div class="card-header">
-                <select class="swap-dropdown" id="sub-crunch" onchange="saveData(this)">
-                    <option value="Decline Plate Crunch">Decline Plate Crunch</option>
-                    <option value="Cable Crunch">Cable Crunch</option>
-                    <option value="Machine Crunch">Machine Crunch</option>
+                <select class="swap-dropdown" id="sub-crunch" data-link-target="link-ex7" onchange="saveData(this)">
+                    <option value="Decline Plate Crunch" data-url="https://youtube.com/results?search_query=Decline+Crunch">Decline Plate Crunch</option>
+                    <option value="Cable Crunch" data-url="https://youtube.com/results?search_query=Cable+Crunch">Cable Crunch</option>
+                    <option value="Machine Crunch" data-url="https://youtube.com/results?search_query=Machine+Crunch">Machine Crunch</option>
                 </select>
-                <a href="https://youtube.com/results?search_query=Decline+Crunch" target="_blank" class="yt-btn">🎥 Form</a>
+                <a href="#" target="_blank" class="yt-btn" id="link-ex7">Form</a>
             </div>
             <p class="exercise-notes">Hold a plate or DB to your chest and crunch hard. Rest ~1-2 min.</p>
             
@@ -384,9 +383,8 @@
     </main>
 
     <script>
-        // UNIVERSAL AUTO-SAVE ENGINE
+        // UNIVERSAL AUTO-SAVE & LINK ENGINE
         
-        // 1. Load everything on page start
         document.addEventListener("DOMContentLoaded", () => {
             // Restore drop-downs, inputs, and checkboxes
             const allElements = document.querySelectorAll('select, input[type="number"], input[type="checkbox"]');
@@ -400,21 +398,41 @@
                         el.value = savedVal;
                     }
                 }
+                
+                // If it's a dropdown, ensure the link is correct on load
+                if (el.tagName === 'SELECT') {
+                    updateLink(el);
+                }
             });
             checkWorkoutCompletion();
         });
 
-        // 2. Save data whenever user types or clicks
+        // Save data and trigger link changes
         function saveData(element) {
             if (element.type === 'checkbox') {
                 localStorage.setItem(element.id, element.checked);
-                checkWorkoutCompletion(); // Check if they finished the workout!
+                checkWorkoutCompletion();
             } else {
                 localStorage.setItem(element.id, element.value);
+                
+                // Update link instantly if they swap an exercise
+                if (element.tagName === 'SELECT') {
+                    updateLink(element);
+                }
             }
         }
 
-        // 3. Logic to check if all WORKING sets are done
+        // The logic that swaps the video link
+        function updateLink(selectElement) {
+            const linkId = selectElement.getAttribute('data-link-target');
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            const newUrl = selectedOption.getAttribute('data-url');
+            
+            if(linkId && newUrl) {
+                document.getElementById(linkId).href = newUrl;
+            }
+        }
+
         function checkWorkoutCompletion() {
             const workCheckboxes = document.querySelectorAll('.work-checkbox');
             let allDone = true;
@@ -426,8 +444,8 @@
             });
 
             if (allDone) {
-                // Future step: This will trigger the "Week 1" button on the previous page to turn green!
                 console.log("Workout Complete!");
+                // Will connect this to the main menu later
             }
         }
     </script>

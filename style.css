@@ -1,0 +1,12 @@
+body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f9; }
+header h1 { text-align: center; color: #333; }
+
+.tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+.tab-btn { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+
+.dashboard, .current-workout { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.exercise-card { border: 1px solid #ddd; padding: 15px; border-radius: 5px; margin-top: 15px; }
+
+.video-link { color: #d9534f; text-decoration: none; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+.logging-area { display: flex; gap: 15px; align-items: center; }
+input { width: 60px; padding: 5px; }

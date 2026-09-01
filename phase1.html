@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 1 - Weeks</title>
+    
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .header-container { 
+            text-align: center; 
+            width: 100%; 
+            max-width: 600px; 
+            margin-bottom: 30px; 
+            position: relative; 
+        }
+        
+        .back-link { 
+            color: #888888; 
+            text-decoration: none; 
+            font-size: 0.95rem; 
+            position: absolute; 
+            left: 0; 
+            top: 5px; 
+            transition: color 0.2s ease;
+        }
+        
+        .back-link:hover { 
+            color: #0077ed; 
+        }
+        
+        h1 { 
+            font-size: 2rem; 
+            font-weight: bold; 
+            margin-bottom: 5px; 
+        }
+        
+        .phase-subtitle { 
+            color: #aaaaaa; 
+            font-size: 0.9rem; 
+            margin-bottom: 20px; 
+            letter-spacing: 1px; 
+        }
+        
+        hr { 
+            border: none; 
+            height: 1px; 
+            background-color: #444444; 
+            margin: 0 auto 30px auto; 
+            width: 75%; 
+        }
+
+        /* Grid for the 6 weeks */
+        .weeks-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Standard Shiny Blue Button */
+        .shiny-btn {
+            background: linear-gradient(135deg, #0051a8, #0077ed, #00d2ff);
+            background-size: 200% auto;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 119, 237, 0.5), inset 0 1px 2px rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .shiny-btn:hover {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 119, 237, 0.7), inset 0 1px 2px rgba(255,255,255,0.6);
+        }
+
+        /* Completed State: Shiny Green (To be triggered by JavaScript later) */
+        .completed-btn {
+            background: linear-gradient(135deg, #006b1b, #00b02c, #33ff66);
+            box-shadow: 0 4px 15px rgba(0, 176, 44, 0.5), inset 0 1px 2px rgba(255,255,255,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .completed-btn:hover {
+            box-shadow: 0 6px 20px rgba(0, 176, 44, 0.7), inset 0 1px 2px rgba(255,255,255,0.6);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="ultimate-ppl.html" class="back-link">← Back</a>
+        <h1>PHASE 1</h1>
+        <div class="phase-subtitle">BASE HYPERTROPHY</div>
+        <hr>
+    </div>
+
+    <main class="weeks-grid">
+        <!-- The buttons don't link anywhere yet until we build the workout day pages -->
+        <button type="button" class="shiny-btn">Week 1</button>
+        <button type="button" class="shiny-btn">Week 2</button>
+        <button type="button" class="shiny-btn">Week 3</button>
+        <button type="button" class="shiny-btn">Week 4</button>
+        <button type="button" class="shiny-btn">Week 5</button>
+        <button type="button" class="shiny-btn">Week 6 (Deload)</button>
+    </main>
+
+</body>
+</html>

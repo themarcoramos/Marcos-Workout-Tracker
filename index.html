@@ -4,22 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marco's Workout Plans</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* CSS is placed directly in the HTML to prevent loading errors */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            background-color: #000000; /* Black background */
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 100vh;
+            padding: 40px 20px 20px;
+        }
+
+        .home-container {
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            margin-top: 15vh;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        /* The Line */
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #444444; 
+            margin: 0 auto 40px auto;
+            width: 75%;
+        }
+
+        /* Shiny Blue Button */
+        .shiny-btn {
+            background: linear-gradient(135deg, #0051a8, #0077ed, #00d2ff);
+            background-size: 200% auto;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 119, 237, 0.5), inset 0 1px 2px rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .shiny-btn:hover {
+            background-position: right center;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 119, 237, 0.7), inset 0 1px 2px rgba(255,255,255,0.6);
+        }
+
+        footer {
+            padding-bottom: 15px;
+        }
+
+        /* Website Link */
+        .footer-link {
+            color: #888888;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: #0077ed;
+        }
+    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <main class="home-container">
-            <h1>Welcome to Marco's Workout Plans</h1>
-            <hr class="divider">
-            
-            <div class="program-list">
-                <button type="button" class="shiny-btn">Ultimate PPL Program</button>
-            </div>
-        </main>
 
-        <footer>
-            <a href="https://themarcoramos.com" target="_blank" rel="noopener noreferrer" class="footer-link">themarcoramos.com</a>
-        </footer>
-    </div>
+    <main class="home-container">
+        <h1>Welcome to Marco's Workout Plans</h1>
+        <hr>
+        <!-- The button doesn't go anywhere yet, as requested -->
+        <button type="button" class="shiny-btn">Ultimate PPL Program</button>
+    </main>
+
+    <footer>
+        <a href="https://themarcoramos.com" target="_blank" class="footer-link">themarcoramos.com</a>
+    </footer>
+
 </body>
 </html>

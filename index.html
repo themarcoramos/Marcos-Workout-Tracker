@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marco's Workout Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Marco's Workout plans</h1>
+    </header>
+
+    <nav class="tabs">
+        <button class="tab-btn active">Ultimate PPL Program</button>
+        <!-- Future program tabs will be added here -->
+    </nav>
+
+    <main>
+        <!-- Up Next Dashboard -->
+        <section class="dashboard">
+            <div class="next-up">
+                <h3>Up Next:</h3>
+                <p>Pull Day 1</p>
+            </div>
+        </section>
+
+        <!-- Current Workout Area -->
+        <section class="current-workout">
+            <h2>Today's Session: Push Day 1</h2>
+
+            <!-- Exercise Card Template -->
+            <div class="exercise-card">
+                <h3>Barbell Bench Press</h3>
+                <a href="YOUR_YOUTUBE_LINK_HERE" target="_blank" class="video-link">🎥 Watch Form Video</a>
+                
+                <div class="logging-area">
+                    <label>Sets: <input type="number" min="1" placeholder="0"></label>
+                    <label>Reps: <input type="number" min="1" placeholder="0"></label>
+                    <label>Weight: <input type="number" min="0" placeholder="lbs"></label>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="app.js"></script>
+</body>
+</html>

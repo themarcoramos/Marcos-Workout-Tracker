@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 - Pull</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 40px 20px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-container { text-align: center; width: 100%; max-width: 600px; margin-bottom: 30px; position: relative; }
+        .back-link { color: #888888; text-decoration: none; font-size: 0.95rem; position: absolute; left: 0; top: 5px; }
+        .back-link:hover { color: #0077ed; }
+        
+        h1 { font-size: 2rem; font-weight: bold; margin-bottom: 5px; }
+        hr { border: none; height: 1px; background-color: #444444; margin: 20px auto; width: 100%; }
+
+        .workout-list {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .exercise-card {
+            background-color: #111111;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .swap-dropdown {
+            flex-grow: 1;
+            background-color: #1c1c1e;
+            color: #0077ed;
+            border: 1px solid #0077ed;
+            padding: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .yt-btn {
+            background: linear-gradient(135deg, #a80000, #ed0000);
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(237, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+        
+        .yt-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(237, 0, 0, 0.6); }
+
+        .exercise-notes { font-size: 0.85rem; color: #888888; font-style: italic; margin-bottom: 15px; text-align: center; }
+
+        .sets-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .sets-table th { color: #aaaaaa; padding-bottom: 10px; font-weight: normal; font-size: 0.8rem; border-bottom: 1px solid #333; }
+        .sets-table td { padding: 10px 5px; vertical-align: middle; text-align: center; border-bottom: 1px solid #222; }
+        
+        .type-warmup { color: #ffaa00; font-size: 0.8rem; }
+        .type-work { color: #00d2ff; font-weight: bold; }
+
+        .log-input {
+            width: 60px;
+            background: #222222;
+            color: #ffffff;
+            border: 1px solid #444;
+            padding: 6px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .checkbox-custom { width: 20px; height: 20px; accent-color: #00b02c; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="week1.html" class="back-link">← Back</a>
+        <h1>DAY 3: PULL</h1>
+        <p style="color: #888; font-size: 0.9rem;">Fill Working Sets to Complete Workout</p>
+        <hr>
+    </div>
+
+    <main class="workout-list">
+        
+        <!-- EXERCISE 1: LAT PULLDOWN (FEEDER SETS) -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="d3-sub-latfeeder" data-link-target="d3-link-ex1" onchange="saveData(this)">
+                    <option value="Lat Pulldown (Feeder Sets)" data-url="https://youtube.com/results?search_query=Lat+Pulldown">Lat Pulldown (Feeder)</option>
+                    <option value="Machine Pulldown" data-url="https://youtube.com/results?search_query=Machine+Pulldown">Machine Pulldown</option>
+                    <option value="Pull-Up" data-url="https://youtube.com/results?search_query=Pull-Up">Pull-Up</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="d3-link-ex1">Form</a>
+            </div>
+            
+            <p class="exercise-notes">4 feeder sets building weight. Set 1: RPE 4-5. Set 2: RPE 6-7. Set 3: RPE 7-8. Set 4: Failure (RPE 10). Rest ~2-3 min.</p>
+            
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>10 Reps</td><td>See Notes</td>
+                    <td><input type="number" class="log-input" id="d3-ex1-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex1-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex1-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>10 Reps</td><td>See Notes</td>
+                    <td><input type="number" class="log-input" id="d3-ex1-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex1-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex1-work2-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>3</td><td class="type-work">Work</td><td>10 Reps</td><td>See Notes</td>
+                    <td><input type="number" class="log-input" id="d3-ex1-work3-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex1-work3-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex1-work3-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>4</td><td class="type-work">Work</td><td>10 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="d3-ex1-work4-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex1-work4-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex1-work4-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 2: LAT PULLDOWN (FAILURE SET) -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="d3-sub-latfailure" data-link-target="d3-link-ex2" onchange="saveData(this)">
+                    <option value="Lat Pulldown (Failure Set)" data-url="https://youtube.com/results?search_query=Lat+Pulldown+Dropset">Lat Pulldown (Failure)</option>
+                    <option value="Machine Pulldown" data-url="https://youtube.com/results?search_query=Machine+Pulldown+Dropset">Machine Pulldown</option>
+                    <option value="Pull-Up" data-url="https://youtube.com/results?search_query=Pull-Up+Dropset">Pull-Up</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="d3-link-ex2">Form</a>
+            </div>
+            <p class="exercise-notes">After hitting failure at ~10 reps, drop weight 30-50% for 5 more controlled reps. Rest ~2-3 min.</p>
+            
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>10+5 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="d3-ex2-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex2-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex2-work1-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 3: OMNIGRIP ROW -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="d3-sub-omnirow" data-link-target="d3-link-ex3" onchange="saveData(this)">
+                    <option value="OmniGrip Machine Row" data-url="https://youtube.com/results?search_query=Machine+Chest+Supported+Row">OmniGrip Machine Row</option>
+                    <option value="Incline Chest-Supported DB Row" data-url="https://youtube.com/results?search_query=Incline+DB+Row">Incline DB Row</option>
+                    <option value="Cable Seated Row" data-url="https://youtube.com/results?search_query=Cable+Seated+Row">Cable Seated Row</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="d3-link-ex3">Form</a>
+            </div>
+            <p class="exercise-notes">Use 3 different grips for 3 working sets (ideally wider to closer). Rest ~2-3 min.</p>
+            
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>-</td><td class="type-warmup">Warm</td><td>2 Sets</td><td>-</td>
+                    <td><input type="number" class="log-input" id="d3-ex3-warm-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex3-warm-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom" id="d3-ex3-warm-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>10-12 Reps</td><td>8-9</td>
+                    <td><input type="number" class="log-input" id="d3-ex3-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex3-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex3-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>10-12 Reps</td><td>8-9</td>
+                    <td><input type="number" class="log-input" id="d3-ex3-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex3-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex3-work2-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>3</td><td class="type-work">Work</td><td>10-12 Reps</td><td>8-9</td>
+                    <td><input type="number" class="log-input" id="d3-ex3-work3-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex3-work3-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex3-work3-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 4: BOTTOM-HALF DB LAT PULLOVER -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="d3-sub-pullover" data-link-target="d3-link-ex4" onchange="saveData(this)">
+                    <option value="A1. Bottom-Half DB Lat Pullover" data-url="https://youtube.com/results?search_query=DB+Lat+Pullover">A1. DB Lat Pullover</option>
+                    <option value="Cable Lat Pullover" data-url="https://youtube.com/results?search_query=Cable+Lat+Pullover">Cable Lat Pullover</option>
+                    <option value="1-Arm Lat Pull-In" data-url="https://youtube.com/results?search_query=One+Arm+Lat+Pull+In">1-Arm Lat Pull-In</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="d3-link-ex4">Form</a>
+            </div>
+            <p class="exercise-notes">Cut out top half of ROM (stay entirely in stretched aspect). Rest 0 min.</p>
+            
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>-</td><td class="type-warmup">Warm</td><td>1 Set</td><td>-</td>
+                    <td><input type="number" class="log-input" id="d3-ex4-warm-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex4-warm-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom" id="d3-ex4-warm-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>10-12 Reps</td><td>9-10</td>
+                    <td><input type="number" class="log-input" id="d3-ex4-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex4-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex4-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>10-12 Reps</td><td>9-10</td>
+                    <td><input type="number" class="log-input" id="d3-ex4-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex4-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex4-work2-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 5: LAT STATIC STRETCH -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="d3-sub-stretch" data-link-target="d3-link-ex5" onchange="saveData(this)">
+                    <option value="A2. Lat Static Stretch" data-url="https://youtube.com/results?search_query=Lat+Static+Stretch">A2. Lat Static Stretch</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="d3-link-ex5">Form</a>
+            </div>
+            <p class="exercise-notes">Hold a lat stretch for 30s at ~7/10 intensity. Rest 0 min.</p>
+            
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>30s Hold</td><td>N/A</td>
+                    <td><input type="number" class="log-input" id="d3-ex5-work1-w" disabled placeholder="-"></td>
+                    <td><input type="number" class="log-input" id="d3-ex5-work1-rpe" disabled placeholder="-"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex5-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>30s Hold</td><td>N/A</td>
+                    <td><input type="number" class="log-input" id="d3-ex5-work2-w" disabled placeholder="-"></td>
+                    <td><input type="number" class="log-input" id="d3-ex5-work2-rpe" disabled placeholder="-"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex5-work2-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 6: OMNI-DIRECTION FACE PULL -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="d3-sub-facepull" data-link-target="d3-link-ex6" onchange="saveData(this)">
+                    <option value="Omni-Direction Face Pull" data-url="https://youtube.com/results?search_query=Omni+Direction+Face+Pull">Omni-Direction Face Pull</option>
+                    <option value="Reverse Cable Flye" data-url="https://youtube.com/results?search_query=Reverse+Cable+Flye">Reverse Cable Flye</option>
+                    <option value="Bent-Over Reverse DB Flye" data-url="https://youtube.com/results?search_query=Reverse+DB+Flye">Reverse DB Flye</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="d3-link-ex6">Form</a>
+            </div>
+            <p class="exercise-notes">1st Set: low-to-high. 2nd Set: mid-range. 3rd Set: high-to-low. Rest ~1-2 min.</p>
+            
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>-</td><td class="type-warmup">Warm</td><td>1 Set</td><td>-</td>
+                    <td><input type="number" class="log-input" id="d3-ex6-warm-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex6-warm-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom" id="d3-ex6-warm-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>12-15 Reps</td><td>9-10</td>
+                    <td><input type="number" class="log-input" id="d3-ex6-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex6-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex6-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>12-15 Reps</td><td>9-10</td>
+                    <td><input type="number" class="log-input" id="d3-ex6-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex6-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex6-work2-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>3</td><td class="type-work">Work</td><td>12-15 Reps</td><td>9-10</td>
+                    <td><input type="number" class="log-input" id="d3-ex6-work3-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex6-work3-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex6-work3-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 7: EZ-BAR CURL -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="d3-sub-ezcurl" data-link-target="d3-link-ex7" onchange="saveData(this)">
+                    <option value="EZ-Bar Curl" data-url="https://youtube.com/results?search_query=EZ+Bar+Curl">EZ-Bar Curl</option>
+                    <option value="DB Curl" data-url="https://youtube.com/results?search_query=DB+Curl">DB Curl</option>
+                    <option value="Cable Curl" data-url="https://youtube.com/results?search_query=Cable+Curl">Cable Curl</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="d3-link-ex7">Form</a>
+            </div>
+            <p class="exercise-notes">Focus on contracting biceps, minimize torso momentum. Rest ~1-2 min.</p>
+            
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>-</td><td class="type-warmup">Warm</td><td>1 Set</td><td>-</td>
+                    <td><input type="number" class="log-input" id="d3-ex7-warm-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex7-warm-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom" id="d3-ex7-warm-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>6-8 Reps</td><td>9-10</td>
+                    <td><input type="number" class="log-input" id="d3-ex7-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex7-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex7-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>6-8 Reps</td><td>9-10</td>
+                    <td><input type="number" class="log-input" id="d3-ex7-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex7-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex7-work2-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>3</td><td class="type-work">Work</td><td>6-8 Reps</td><td>9-10</td>
+                    <td><input type="number" class="log-input" id="d3-ex7-work3-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex7-work3-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex7-work3-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 8: BOTTOM-HALF PREACHER CURL -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="d3-sub-preacher" data-link-target="d3-link-ex8" onchange="saveData(this)">
+                    <option value="Bottom-Half Preacher Curl" data-url="https://youtube.com/results?search_query=Bottom+Half+Preacher+Curl">Bottom-Half Preacher Curl</option>
+                    <option value="Bottom-Half Spider Curl" data-url="https://youtube.com/results?search_query=Bottom+Half+Spider+Curl">Bottom-Half Spider Curl</option>
+                    <option value="Bottom-Half Bayesian Curl" data-url="https://youtube.com/results?search_query=Bottom+Half+Bayesian+Curl">Bottom-Half Bayesian</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="d3-link-ex8">Form</a>
+            </div>
+            <p class="exercise-notes">Cut out top half of ROM (stay entirely in stretched aspect). Rest ~1-2 min.</p>
+            
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>10-12 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="d3-ex8-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex8-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex8-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>10-12 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="d3-ex8-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="d3-ex8-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="d3-ex8-work2-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
+
+    <script>
+        // UNIVERSAL AUTO-SAVE & LINK ENGINE
+        document.addEventListener("DOMContentLoaded", () => {
+            const allElements = document.querySelectorAll('select, input[type="number"]:not([disabled]), input[type="checkbox"]');
+            
+            allElements.forEach(el => {
+                const savedVal = localStorage.getItem(el.id);
+                if (savedVal !== null) {
+                    if (el.type === 'checkbox') {
+                        el.checked = (savedVal === 'true');
+                    } else {
+                        el.value = savedVal;
+                    }
+                }
+                
+                if (el.tagName === 'SELECT') {
+                    updateLink(el);
+                }
+            });
+            checkWorkoutCompletion();
+        });
+
+        function saveData(element) {
+            if (element.type === 'checkbox') {
+                localStorage.setItem(element.id, element.checked);
+                checkWorkoutCompletion();
+            } else {
+                localStorage.setItem(element.id, element.value);
+                if (element.tagName === 'SELECT') {
+                    updateLink(element);
+                }
+            }
+        }
+
+        function updateLink(selectElement) {
+            const linkId = selectElement.getAttribute('data-link-target');
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            const newUrl = selectedOption.getAttribute('data-url');
+            
+            if(linkId && newUrl) {
+                document.getElementById(linkId).href = newUrl;
+            }
+        }
+
+        function checkWorkoutCompletion() {
+            const workCheckboxes = document.querySelectorAll('.work-checkbox');
+            let allDone = true;
+            
+            workCheckboxes.forEach(box => {
+                if (!box.checked) {
+                    allDone = false;
+                }
+            });
+
+            if (allDone) {
+                console.log("Day 3 Complete!");
+            }
+        }
+    </script>
+</body>
+</html>

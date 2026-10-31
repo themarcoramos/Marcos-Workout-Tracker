@@ -2,468 +2,198 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phase 3 Week 2 Day 3 - Pull</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            padding: 40px 20px 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .header-container { text-align: center; width: 100%; max-width: 600px; margin-bottom: 30px; position: relative; }
-        .back-link { color: #888888; text-decoration: none; font-size: 0.95rem; position: absolute; left: 0; top: 5px; }
-        .back-link:hover { color: #0077ed; }
-        
-        h1 { font-size: 2rem; font-weight: bold; margin-bottom: 5px; }
-        hr { border: none; height: 1px; background-color: #444444; margin: 20px auto; width: 100%; }
-
-        .workout-list {
-            width: 100%;
-            max-width: 600px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .exercise-card {
-            background-color: #111111;
-            border: 1px solid #333333;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-        }
-        
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-            gap: 10px;
-        }
-
-        .swap-dropdown {
-            flex-grow: 1;
-            background-color: #1c1c1e;
-            color: #0077ed;
-            border: 1px solid #0077ed;
-            padding: 10px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-        
-        .yt-btn {
-            background: linear-gradient(135deg, #a80000, #ed0000);
-            color: white;
-            text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            white-space: nowrap;
-            box-shadow: 0 2px 8px rgba(237, 0, 0, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.2s ease;
-        }
-        
-        .yt-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(237, 0, 0, 0.6); }
-
-        .exercise-notes { font-size: 0.85rem; color: #888888; font-style: italic; margin-bottom: 15px; text-align: center; }
-
-        .sets-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            font-size: 0.9rem;
-        }
-        
-        .sets-table th { color: #aaaaaa; padding-bottom: 10px; font-weight: normal; font-size: 0.8rem; border-bottom: 1px solid #333; }
-        .sets-table td { padding: 10px 5px; vertical-align: middle; text-align: center; border-bottom: 1px solid #222; }
-        
-        .type-warmup { color: #ffaa00; font-size: 0.8rem; }
-        .type-work { color: #00d2ff; font-weight: bold; }
-
-        .log-input {
-            width: 60px;
-            background: #222222;
-            color: #ffffff;
-            border: 1px solid #444;
-            padding: 6px;
-            border-radius: 5px;
-            text-align: center;
-        }
-        
-        .checkbox-custom { width: 20px; height: 20px; accent-color: #00b02c; cursor: pointer; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>Pull, Week 2 | Phase 3 | Marco&#x27;s Workout Plans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts load without blocking the page, so it still works with a slow or missing connection -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="app.css">
 </head>
-<body>
+<body class="day-page" data-page="phase3-week2-day3-pull.html" data-label="Phase 3, Week 2, Pull">
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="phase3-week2.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Week 2</a>
+            <div class="topbar-count" data-progress-text><strong>0</strong> of 20 sets</div>
+        </div>
+        <div class="topbar-bar"><span data-progress-bar></span></div>
+    </header>
 
-    <div class="header-container">
-        <a href="phase3-week2.html" class="back-link">← Back</a>
-        <h1>DAY 3: PULL</h1>
-        <p style="color: #888; font-size: 0.9rem;">Phase 3 · Week 2 · Fill Working Sets to Complete Workout</p>
-        <hr>
+    <div class="page">
+        <section class="hero">
+            <p class="hero-context">Phase 3, Week 2, Day 3</p>
+            <h1>Pull</h1>
+        </section>
+
+        <main class="lifts">
+            <article class="lift" data-rest="120">
+                <div class="lift-head">
+                    <div class="swap">
+                        <select class="swap-dropdown" id="p3w2d3-sub-1" data-link-target="p3w2d3-link-ex1" onchange="saveData(this)" aria-label="Exercise (swap for a substitution)">
+                        <option value="1-Arm Half Kneeling Lat Pulldown" data-url="https://youtu.be/B0W4DQeo1tE">1-Arm Half Kneeling Lat Pulldown</option>
+                        <option value="1-Arm Lat Pull-In" data-url="https://youtu.be/f2JDJV0AnyY?t=36">1-Arm Lat Pull-In</option>
+                        <option value="Cable Lat Pullover" data-url="https://youtu.be/Vf7wf6bZODQ">Cable Lat Pullover</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="lift-meta"><span class="chip">Rest ~1–2 min</span><span class="chip last" hidden></span><a href="#" target="_blank" rel="noopener" class="yt-btn" id="p3w2d3-link-ex1"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Form</a></div>
+                <p class="lift-note">Keep chest tall, keep elbow tucked in close to your torso, focus on squeezing your lat to move the weight.</p>
+                <div class="sets" role="group" aria-label="Sets">
+                    <div class="set head" aria-hidden="true"><span>Set</span><span>Target</span><span>Weight</span><span>RPE</span><span></span></div>
+                    <div class="set warm"><span class="set-num">W</span><div class="target"><span class="reps">1 set</span><span class="goal">Warm-up</span></div><input type="number" class="field weight-input" id="p3w2d3-ex1-warm-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Warm-up weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex1-warm-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="" oninput="saveData(this)" aria-label="Warm-up RPE, 1 to 10"><label class="done"><input type="checkbox" id="p3w2d3-ex1-warm-done" onchange="saveData(this)" aria-label="Warm-up done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">1</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 9</span></div><input type="number" class="field weight-input" id="p3w2d3-ex1-work1-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 1 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex1-work1-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="9" oninput="saveData(this)" aria-label="Set 1 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex1-work1-done" onchange="saveData(this)" aria-label="Set 1 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">2</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 9</span></div><input type="number" class="field weight-input" id="p3w2d3-ex1-work2-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 2 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex1-work2-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="9" oninput="saveData(this)" aria-label="Set 2 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex1-work2-done" onchange="saveData(this)" aria-label="Set 2 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                </div>
+            </article>
+
+            <article class="lift" data-rest="180">
+                <div class="lift-head">
+                    <div class="swap">
+                        <select class="swap-dropdown" id="p3w2d3-sub-2" data-link-target="p3w2d3-link-ex2" onchange="saveData(this)" aria-label="Exercise (swap for a substitution)">
+                        <option value="Omni-Grip Lat Pulldown" data-url="https://youtu.be/qVek72z3F1U?t=927">Omni-Grip Lat Pulldown</option>
+                        <option value="Omni-Grip Pull-Up" data-url="https://youtu.be/C47fKaggsJY">Omni-Grip Pull-Up</option>
+                        <option value="Chin-Up" data-url="https://youtu.be/-d2Uui6MtRk">Chin-Up</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="lift-meta"><span class="chip">Rest ~2–3 min</span><span class="chip last" hidden></span><a href="#" target="_blank" rel="noopener" class="yt-btn" id="p3w2d3-link-ex2"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Form</a></div>
+                <p class="lift-note">One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand).</p>
+                <div class="sets" role="group" aria-label="Sets">
+                    <div class="set head" aria-hidden="true"><span>Set</span><span>Target</span><span>Weight</span><span>RPE</span><span></span></div>
+                    <div class="set warm"><span class="set-num">W</span><div class="target"><span class="reps">1 set</span><span class="goal">Warm-up</span></div><input type="number" class="field weight-input" id="p3w2d3-ex2-warm-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Warm-up weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex2-warm-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="" oninput="saveData(this)" aria-label="Warm-up RPE, 1 to 10"><label class="done"><input type="checkbox" id="p3w2d3-ex2-warm-done" onchange="saveData(this)" aria-label="Warm-up done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">1</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 9</span></div><input type="number" class="field weight-input" id="p3w2d3-ex2-work1-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 1 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex2-work1-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="9" oninput="saveData(this)" aria-label="Set 1 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex2-work1-done" onchange="saveData(this)" aria-label="Set 1 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">2</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 9</span></div><input type="number" class="field weight-input" id="p3w2d3-ex2-work2-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 2 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex2-work2-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="9" oninput="saveData(this)" aria-label="Set 2 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex2-work2-done" onchange="saveData(this)" aria-label="Set 2 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">3</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 9</span></div><input type="number" class="field weight-input" id="p3w2d3-ex2-work3-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 3 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex2-work3-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="9" oninput="saveData(this)" aria-label="Set 3 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex2-work3-done" onchange="saveData(this)" aria-label="Set 3 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                </div>
+            </article>
+
+            <article class="lift" data-rest="180">
+                <div class="lift-head">
+                    <div class="swap">
+                        <select class="swap-dropdown" id="p3w2d3-sub-3" data-link-target="p3w2d3-link-ex3" onchange="saveData(this)" aria-label="Exercise (swap for a substitution)">
+                        <option value="Machine Low Row" data-url="https://youtu.be/FAOL2S-5KoA">Machine Low Row</option>
+                        <option value="Helms Row" data-url="https://youtu.be/axoeDmW0oAY?t=419">Helms Row</option>
+                        <option value="Incline Chest-Supported DB Row" data-url="https://youtu.be/bsx8PIGIuaI">Incline Chest-Supported DB Row</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="lift-meta"><span class="chip">Rest ~2–3 min</span><span class="chip last" hidden></span><a href="#" target="_blank" rel="noopener" class="yt-btn" id="p3w2d3-link-ex3"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Form</a></div>
+                <p class="lift-note">Focus on squeezing your shoulder blades together on each rep.</p>
+                <div class="sets" role="group" aria-label="Sets">
+                    <div class="set head" aria-hidden="true"><span>Set</span><span>Target</span><span>Weight</span><span>RPE</span><span></span></div>
+                    <div class="set warm"><span class="set-num">W</span><div class="target"><span class="reps">2 sets</span><span class="goal">Warm-up</span></div><input type="number" class="field weight-input" id="p3w2d3-ex3-warm-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Warm-up weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex3-warm-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="" oninput="saveData(this)" aria-label="Warm-up RPE, 1 to 10"><label class="done"><input type="checkbox" id="p3w2d3-ex3-warm-done" onchange="saveData(this)" aria-label="Warm-up done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">1</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 9</span></div><input type="number" class="field weight-input" id="p3w2d3-ex3-work1-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 1 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex3-work1-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="9" oninput="saveData(this)" aria-label="Set 1 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex3-work1-done" onchange="saveData(this)" aria-label="Set 1 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">2</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 9</span></div><input type="number" class="field weight-input" id="p3w2d3-ex3-work2-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 2 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex3-work2-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="9" oninput="saveData(this)" aria-label="Set 2 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex3-work2-done" onchange="saveData(this)" aria-label="Set 2 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">3</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 9</span></div><input type="number" class="field weight-input" id="p3w2d3-ex3-work3-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 3 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex3-work3-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="9" oninput="saveData(this)" aria-label="Set 3 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex3-work3-done" onchange="saveData(this)" aria-label="Set 3 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">4</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 9</span></div><input type="number" class="field weight-input" id="p3w2d3-ex3-work4-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 4 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex3-work4-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="9" oninput="saveData(this)" aria-label="Set 4 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex3-work4-done" onchange="saveData(this)" aria-label="Set 4 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                </div>
+            </article>
+
+            <article class="lift" data-rest="120">
+                <div class="lift-head">
+                    <div class="swap">
+                        <select class="swap-dropdown" id="p3w2d3-sub-4" data-link-target="p3w2d3-link-ex4" onchange="saveData(this)" aria-label="Exercise (swap for a substitution)">
+                        <option value="Cable Shrug-In" data-url="https://youtu.be/C6sYjDFuq9I?t=354">Cable Shrug-In</option>
+                        <option value="DB Shrug" data-url="https://youtu.be/C6sYjDFuq9I?t=327">DB Shrug</option>
+                        <option value="Plate Shrug" data-url="https://youtu.be/NE41flyGBgk">Plate Shrug</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="lift-meta"><span class="chip">Rest ~1–2 min</span><span class="chip last" hidden></span><a href="#" target="_blank" rel="noopener" class="yt-btn" id="p3w2d3-link-ex4"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Form</a></div>
+                <p class="lift-note">Set up two cable handles low and shrug up and in. Squeeze your upper traps to move the weight.</p>
+                <div class="sets" role="group" aria-label="Sets">
+                    <div class="set head" aria-hidden="true"><span>Set</span><span>Target</span><span>Weight</span><span>RPE</span><span></span></div>
+                    <div class="set warm"><span class="set-num">W</span><div class="target"><span class="reps">1 set</span><span class="goal">Warm-up</span></div><input type="number" class="field weight-input" id="p3w2d3-ex4-warm-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Warm-up weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex4-warm-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="" oninput="saveData(this)" aria-label="Warm-up RPE, 1 to 10"><label class="done"><input type="checkbox" id="p3w2d3-ex4-warm-done" onchange="saveData(this)" aria-label="Warm-up done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">1</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 10</span></div><input type="number" class="field weight-input" id="p3w2d3-ex4-work1-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 1 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex4-work1-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="10" oninput="saveData(this)" aria-label="Set 1 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex4-work1-done" onchange="saveData(this)" aria-label="Set 1 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">2</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 10</span></div><input type="number" class="field weight-input" id="p3w2d3-ex4-work2-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 2 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex4-work2-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="10" oninput="saveData(this)" aria-label="Set 2 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex4-work2-done" onchange="saveData(this)" aria-label="Set 2 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">3</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 10</span></div><input type="number" class="field weight-input" id="p3w2d3-ex4-work3-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 3 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex4-work3-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="10" oninput="saveData(this)" aria-label="Set 3 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex4-work3-done" onchange="saveData(this)" aria-label="Set 3 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                </div>
+            </article>
+
+            <article class="lift" data-rest="120">
+                <div class="lift-head">
+                    <div class="swap">
+                        <select class="swap-dropdown" id="p3w2d3-sub-5" data-link-target="p3w2d3-link-ex5" onchange="saveData(this)" aria-label="Exercise (swap for a substitution)">
+                        <option value="Reverse Pec Deck" data-url="https://youtu.be/qfc70k40318?t=259">Reverse Pec Deck</option>
+                        <option value="Reverse Cable Flye" data-url="https://youtu.be/uCV40OQMGpM">Reverse Cable Flye</option>
+                        <option value="Bent-Over Reverse DB Flye" data-url="https://youtu.be/qfc70k40318?t=311">Bent-Over Reverse DB Flye</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="lift-meta"><span class="chip">Rest ~1–2 min</span><span class="chip last" hidden></span><a href="#" target="_blank" rel="noopener" class="yt-btn" id="p3w2d3-link-ex5"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Form</a></div>
+                <p class="lift-note">Swing the weight "out", not "back".</p>
+                <div class="sets" role="group" aria-label="Sets">
+                    <div class="set head" aria-hidden="true"><span>Set</span><span>Target</span><span>Weight</span><span>RPE</span><span></span></div>
+                    <div class="set warm"><span class="set-num">W</span><div class="target"><span class="reps">1 set</span><span class="goal">Warm-up</span></div><input type="number" class="field weight-input" id="p3w2d3-ex5-warm-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Warm-up weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex5-warm-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="" oninput="saveData(this)" aria-label="Warm-up RPE, 1 to 10"><label class="done"><input type="checkbox" id="p3w2d3-ex5-warm-done" onchange="saveData(this)" aria-label="Warm-up done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">1</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 10</span></div><input type="number" class="field weight-input" id="p3w2d3-ex5-work1-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 1 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex5-work1-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="10" oninput="saveData(this)" aria-label="Set 1 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex5-work1-done" onchange="saveData(this)" aria-label="Set 1 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">2</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 10</span></div><input type="number" class="field weight-input" id="p3w2d3-ex5-work2-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 2 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex5-work2-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="10" oninput="saveData(this)" aria-label="Set 2 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex5-work2-done" onchange="saveData(this)" aria-label="Set 2 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">3</span><div class="target"><span class="reps">20 reps</span><span class="goal">RPE 10</span></div><input type="number" class="field weight-input" id="p3w2d3-ex5-work3-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 3 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex5-work3-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="10" oninput="saveData(this)" aria-label="Set 3 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex5-work3-done" onchange="saveData(this)" aria-label="Set 3 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                </div>
+            </article>
+
+            <article class="lift" data-rest="120">
+                <div class="lift-head">
+                    <div class="swap">
+                        <select class="swap-dropdown" id="p3w2d3-sub-6" data-link-target="p3w2d3-link-ex6" onchange="saveData(this)" aria-label="Exercise (swap for a substitution)">
+                        <option value="EZ-Bar Curl (Heavy)" data-url="https://www.youtube.com/watch?v=Dd0t5UOCEUc">EZ-Bar Curl (Heavy)</option>
+                        <option value="DB Curl" data-url="https://youtu.be/i1YgFZB6alI?t=487">DB Curl</option>
+                        <option value="Cable Curl" data-url="https://youtu.be/tw1h5XOD23Y">Cable Curl</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="lift-meta"><span class="chip">Rest ~1–2 min</span><span class="chip last" hidden></span><a href="#" target="_blank" rel="noopener" class="yt-btn" id="p3w2d3-link-ex6"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Form</a></div>
+                <p class="lift-note">Arc the bar "out" not "up", focus on squeezing your biceps.</p>
+                <div class="sets" role="group" aria-label="Sets">
+                    <div class="set head" aria-hidden="true"><span>Set</span><span>Target</span><span>Weight</span><span>RPE</span><span></span></div>
+                    <div class="set warm"><span class="set-num">W</span><div class="target"><span class="reps">2 sets</span><span class="goal">Warm-up</span></div><input type="number" class="field weight-input" id="p3w2d3-ex6-warm-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Warm-up weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex6-warm-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="" oninput="saveData(this)" aria-label="Warm-up RPE, 1 to 10"><label class="done"><input type="checkbox" id="p3w2d3-ex6-warm-done" onchange="saveData(this)" aria-label="Warm-up done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">1</span><div class="target"><span class="reps">4–6 reps</span><span class="goal">RPE 9</span></div><input type="number" class="field weight-input" id="p3w2d3-ex6-work1-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 1 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex6-work1-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="9" oninput="saveData(this)" aria-label="Set 1 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex6-work1-done" onchange="saveData(this)" aria-label="Set 1 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                </div>
+            </article>
+
+            <article class="lift" data-rest="0">
+                <div class="lift-head">
+                    <div class="swap">
+                        <select class="swap-dropdown" id="p3w2d3-sub-7" data-link-target="p3w2d3-link-ex7" onchange="saveData(this)" aria-label="Exercise (swap for a substitution)">
+                        <option value="A1: EZ-Bar Modified Bicep 21&#x27;s" data-url="https://youtu.be/4T7thZvFNSI">A1: EZ-Bar Modified Bicep 21&#x27;s</option>
+                        <option value="DB Curl 21&#x27;s" data-url="https://youtu.be/aLdCmwAfSac">DB Curl 21&#x27;s</option>
+                        <option value="Cable Curl 21&#x27;s" data-url="https://youtu.be/2Gt_Ip_ENv4">Cable Curl 21&#x27;s</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="lift-meta"><span class="chip">No rest, straight to the next one</span><span class="chip last" hidden></span><a href="#" target="_blank" rel="noopener" class="yt-btn" id="p3w2d3-link-ex7"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Form</a></div>
+                <p class="lift-note">7 reps seated, 7 reps standing full ROM, 7 reps bottom-half curls.</p>
+                <div class="sets" role="group" aria-label="Sets">
+                    <div class="set head" aria-hidden="true"><span>Set</span><span>Target</span><span>Weight</span><span>RPE</span><span></span></div>
+                    <div class="set work"><span class="set-num">1</span><div class="target"><span class="reps">21 reps</span><span class="goal">RPE 10</span></div><input type="number" class="field weight-input" id="p3w2d3-ex7-work1-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 1 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex7-work1-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="10" oninput="saveData(this)" aria-label="Set 1 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex7-work1-done" onchange="saveData(this)" aria-label="Set 1 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work"><span class="set-num">2</span><div class="target"><span class="reps">21 reps</span><span class="goal">RPE 10</span></div><input type="number" class="field weight-input" id="p3w2d3-ex7-work2-w" inputmode="decimal" step="any" min="0" placeholder="lbs" oninput="saveData(this)" aria-label="Set 2 weight in pounds"><input type="number" class="field rpe-field" id="p3w2d3-ex7-work2-rpe" inputmode="none" readonly min="1" max="10" step="0.5" placeholder="RPE" data-goal="10" oninput="saveData(this)" aria-label="Set 2 RPE, 1 to 10"><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex7-work2-done" onchange="saveData(this)" aria-label="Set 2 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                </div>
+            </article>
+
+            <article class="lift" data-rest="0">
+                <div class="lift-head">
+                    <div class="swap">
+                        <select class="swap-dropdown" id="p3w2d3-sub-8" data-link-target="p3w2d3-link-ex8" onchange="saveData(this)" aria-label="Exercise (swap for a substitution)">
+                        <option value="A2: Bicep Static STRETCH (30s)" data-url="https://youtu.be/P6PXY01u-DY">A2: Bicep Static STRETCH (30s)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="lift-meta"><span class="chip">No rest, straight to the next one</span><span class="chip last" hidden></span><a href="#" target="_blank" rel="noopener" class="yt-btn" id="p3w2d3-link-ex8"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Form</a></div>
+                <p class="lift-note">Hold a bicep stretch for 30 seconds. The stretch should be held at about a 7/10 intensity.</p>
+                <div class="sets" role="group" aria-label="Sets">
+                    <div class="set head" aria-hidden="true"><span>Set</span><span>Target</span><span>Weight</span><span>RPE</span><span></span></div>
+                    <div class="set work hold"><span class="set-num">1</span><div class="target"><span class="reps">30s hold</span><span class="goal">Static stretch</span></div><div class="hold-cell"><button type="button" class="hold-btn" data-hold="30">Start 30s</button></div><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex8-work1-done" onchange="saveData(this)" aria-label="Set 1 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                    <div class="set work hold"><span class="set-num">2</span><div class="target"><span class="reps">30s hold</span><span class="goal">Static stretch</span></div><div class="hold-cell"><button type="button" class="hold-btn" data-hold="30">Start 30s</button></div><label class="done"><input type="checkbox" class="work-checkbox" id="p3w2d3-ex8-work2-done" onchange="saveData(this)" aria-label="Set 2 done"><span class="done-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+                </div>
+            </article>
+        </main>
+
+        <section class="finish" aria-live="polite">
+            <h2>Workout complete</h2>
+            <p>All 20 sets are done. <a href="phase3-week2.html">Back to Week 2</a></p>
+        </section>
     </div>
-
-    <main class="workout-list">
-
-        <!-- EXERCISE 1: 1-ARM HALF KNEELING LAT PULLDOWN -->
-        <div class="exercise-card">
-            <div class="card-header">
-                <select class="swap-dropdown" id="p3w2d3-sub-1" data-link-target="p3w2d3-link-ex1" onchange="saveData(this)">
-                    <option value="1-Arm Half Kneeling Lat Pulldown" data-url="https://youtu.be/B0W4DQeo1tE">1-Arm Half Kneeling Lat Pulldown</option>
-                    <option value="1-Arm Lat Pull-In" data-url="https://youtu.be/f2JDJV0AnyY?t=36">1-Arm Lat Pull-In</option>
-                    <option value="Cable Lat Pullover" data-url="https://youtu.be/Vf7wf6bZODQ">Cable Lat Pullover</option>
-                </select>
-                <a href="#" target="_blank" class="yt-btn" id="p3w2d3-link-ex1">Form</a>
-            </div>
-            <p class="exercise-notes">Keep chest tall, keep elbow tucked in close to your torso, focus on squeezing your lat to move the weight. Rest ~1-2 min.</p>
-
-            <table class="sets-table">
-                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
-                <tr>
-                    <td>-</td><td class="type-warmup">Warm</td><td>1 Set</td><td>-</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex1-warm-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex1-warm-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom" id="p3w2d3-ex1-warm-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>1</td><td class="type-work">Work</td><td>20 Reps</td><td>9</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex1-work1-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex1-work1-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex1-work1-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>2</td><td class="type-work">Work</td><td>20 Reps</td><td>9</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex1-work2-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex1-work2-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex1-work2-done" onchange="saveData(this)"></td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- EXERCISE 2: OMNI-GRIP LAT PULLDOWN -->
-        <div class="exercise-card">
-            <div class="card-header">
-                <select class="swap-dropdown" id="p3w2d3-sub-2" data-link-target="p3w2d3-link-ex2" onchange="saveData(this)">
-                    <option value="Omni-Grip Lat Pulldown" data-url="https://youtu.be/qVek72z3F1U?t=927">Omni-Grip Lat Pulldown</option>
-                    <option value="Omni-Grip Pull-Up" data-url="https://youtu.be/C47fKaggsJY">Omni-Grip Pull-Up</option>
-                    <option value="Chin-Up" data-url="https://youtu.be/-d2Uui6MtRk">Chin-Up</option>
-                </select>
-                <a href="#" target="_blank" class="yt-btn" id="p3w2d3-link-ex2">Form</a>
-            </div>
-            <p class="exercise-notes">One set wide grip (overhand), 1 set middle grip (overhand), 1 set close grip (underhand). Rest ~2-3 min.</p>
-
-            <table class="sets-table">
-                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
-                <tr>
-                    <td>-</td><td class="type-warmup">Warm</td><td>1 Set</td><td>-</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex2-warm-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex2-warm-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom" id="p3w2d3-ex2-warm-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>1</td><td class="type-work">Work</td><td>20 Reps</td><td>9</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex2-work1-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex2-work1-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex2-work1-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>2</td><td class="type-work">Work</td><td>20 Reps</td><td>9</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex2-work2-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex2-work2-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex2-work2-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>3</td><td class="type-work">Work</td><td>20 Reps</td><td>9</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex2-work3-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex2-work3-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex2-work3-done" onchange="saveData(this)"></td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- EXERCISE 3: MACHINE LOW ROW -->
-        <div class="exercise-card">
-            <div class="card-header">
-                <select class="swap-dropdown" id="p3w2d3-sub-3" data-link-target="p3w2d3-link-ex3" onchange="saveData(this)">
-                    <option value="Machine Low Row" data-url="https://youtu.be/FAOL2S-5KoA">Machine Low Row</option>
-                    <option value="Helms Row" data-url="https://youtu.be/axoeDmW0oAY?t=419">Helms Row</option>
-                    <option value="Incline Chest-Supported DB Row" data-url="https://youtu.be/bsx8PIGIuaI">Incline Chest-Supported DB Row</option>
-                </select>
-                <a href="#" target="_blank" class="yt-btn" id="p3w2d3-link-ex3">Form</a>
-            </div>
-            <p class="exercise-notes">Focus on squeezing your shoulder blades together on each rep. Rest ~2-3 min.</p>
-
-            <table class="sets-table">
-                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
-                <tr>
-                    <td>-</td><td class="type-warmup">Warm</td><td>2 Sets</td><td>-</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex3-warm-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex3-warm-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom" id="p3w2d3-ex3-warm-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>1</td><td class="type-work">Work</td><td>20 Reps</td><td>9</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex3-work1-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex3-work1-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex3-work1-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>2</td><td class="type-work">Work</td><td>20 Reps</td><td>9</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex3-work2-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex3-work2-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex3-work2-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>3</td><td class="type-work">Work</td><td>20 Reps</td><td>9</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex3-work3-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex3-work3-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex3-work3-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>4</td><td class="type-work">Work</td><td>20 Reps</td><td>9</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex3-work4-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex3-work4-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex3-work4-done" onchange="saveData(this)"></td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- EXERCISE 4: CABLE SHRUG-IN -->
-        <div class="exercise-card">
-            <div class="card-header">
-                <select class="swap-dropdown" id="p3w2d3-sub-4" data-link-target="p3w2d3-link-ex4" onchange="saveData(this)">
-                    <option value="Cable Shrug-In" data-url="https://youtu.be/C6sYjDFuq9I?t=354">Cable Shrug-In</option>
-                    <option value="DB Shrug" data-url="https://youtu.be/C6sYjDFuq9I?t=327">DB Shrug</option>
-                    <option value="Plate Shrug" data-url="https://youtu.be/NE41flyGBgk">Plate Shrug</option>
-                </select>
-                <a href="#" target="_blank" class="yt-btn" id="p3w2d3-link-ex4">Form</a>
-            </div>
-            <p class="exercise-notes">Set up two cable handles low and shrug up and in. Squeeze your upper traps to move the weight. Rest ~1-2 min.</p>
-
-            <table class="sets-table">
-                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
-                <tr>
-                    <td>-</td><td class="type-warmup">Warm</td><td>1 Set</td><td>-</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex4-warm-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex4-warm-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom" id="p3w2d3-ex4-warm-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>1</td><td class="type-work">Work</td><td>20 Reps</td><td>10</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex4-work1-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex4-work1-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex4-work1-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>2</td><td class="type-work">Work</td><td>20 Reps</td><td>10</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex4-work2-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex4-work2-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex4-work2-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>3</td><td class="type-work">Work</td><td>20 Reps</td><td>10</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex4-work3-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex4-work3-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex4-work3-done" onchange="saveData(this)"></td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- EXERCISE 5: REVERSE PEC DECK -->
-        <div class="exercise-card">
-            <div class="card-header">
-                <select class="swap-dropdown" id="p3w2d3-sub-5" data-link-target="p3w2d3-link-ex5" onchange="saveData(this)">
-                    <option value="Reverse Pec Deck" data-url="https://youtu.be/qfc70k40318?t=259">Reverse Pec Deck</option>
-                    <option value="Reverse Cable Flye" data-url="https://youtu.be/uCV40OQMGpM">Reverse Cable Flye</option>
-                    <option value="Bent-Over Reverse DB Flye" data-url="https://youtu.be/qfc70k40318?t=311">Bent-Over Reverse DB Flye</option>
-                </select>
-                <a href="#" target="_blank" class="yt-btn" id="p3w2d3-link-ex5">Form</a>
-            </div>
-            <p class="exercise-notes">Swing the weight "out", not "back". Rest ~1-2 min.</p>
-
-            <table class="sets-table">
-                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
-                <tr>
-                    <td>-</td><td class="type-warmup">Warm</td><td>1 Set</td><td>-</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex5-warm-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex5-warm-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom" id="p3w2d3-ex5-warm-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>1</td><td class="type-work">Work</td><td>20 Reps</td><td>10</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex5-work1-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex5-work1-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex5-work1-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>2</td><td class="type-work">Work</td><td>20 Reps</td><td>10</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex5-work2-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex5-work2-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex5-work2-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>3</td><td class="type-work">Work</td><td>20 Reps</td><td>10</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex5-work3-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex5-work3-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex5-work3-done" onchange="saveData(this)"></td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- EXERCISE 6: EZ-BAR CURL (HEAVY) -->
-        <div class="exercise-card">
-            <div class="card-header">
-                <select class="swap-dropdown" id="p3w2d3-sub-6" data-link-target="p3w2d3-link-ex6" onchange="saveData(this)">
-                    <option value="EZ-Bar Curl (Heavy)" data-url="https://www.youtube.com/watch?v=Dd0t5UOCEUc">EZ-Bar Curl (Heavy)</option>
-                    <option value="DB Curl" data-url="https://youtu.be/i1YgFZB6alI?t=487">DB Curl</option>
-                    <option value="Cable Curl" data-url="https://youtu.be/tw1h5XOD23Y">Cable Curl</option>
-                </select>
-                <a href="#" target="_blank" class="yt-btn" id="p3w2d3-link-ex6">Form</a>
-            </div>
-            <p class="exercise-notes">Arc the bar "out" not "up", focus on squeezing your biceps. Rest ~1-2 min.</p>
-
-            <table class="sets-table">
-                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
-                <tr>
-                    <td>-</td><td class="type-warmup">Warm</td><td>2 Sets</td><td>-</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex6-warm-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex6-warm-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom" id="p3w2d3-ex6-warm-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>1</td><td class="type-work">Work</td><td>4-6 Reps</td><td>9</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex6-work1-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex6-work1-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex6-work1-done" onchange="saveData(this)"></td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- EXERCISE 7: A1: EZ-BAR MODIFIED BICEP 21'S -->
-        <div class="exercise-card">
-            <div class="card-header">
-                <select class="swap-dropdown" id="p3w2d3-sub-7" data-link-target="p3w2d3-link-ex7" onchange="saveData(this)">
-                    <option value="A1: EZ-Bar Modified Bicep 21&#x27;s" data-url="https://youtu.be/4T7thZvFNSI">A1: EZ-Bar Modified Bicep 21&#x27;s</option>
-                    <option value="DB Curl 21&#x27;s" data-url="https://youtu.be/aLdCmwAfSac">DB Curl 21&#x27;s</option>
-                    <option value="Cable Curl 21&#x27;s" data-url="https://youtu.be/2Gt_Ip_ENv4">Cable Curl 21&#x27;s</option>
-                </select>
-                <a href="#" target="_blank" class="yt-btn" id="p3w2d3-link-ex7">Form</a>
-            </div>
-            <p class="exercise-notes">7 reps seated, 7 reps standing full ROM, 7 reps bottom-half curls. Rest 0 min.</p>
-
-            <table class="sets-table">
-                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
-                <tr>
-                    <td>1</td><td class="type-work">Work</td><td>21 Reps</td><td>10</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex7-work1-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex7-work1-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex7-work1-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>2</td><td class="type-work">Work</td><td>21 Reps</td><td>10</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex7-work2-w" oninput="saveData(this)"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex7-work2-rpe" oninput="saveData(this)"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex7-work2-done" onchange="saveData(this)"></td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- EXERCISE 8: A2: BICEP STATIC STRETCH (30S) -->
-        <div class="exercise-card">
-            <div class="card-header">
-                <select class="swap-dropdown" id="p3w2d3-sub-8" data-link-target="p3w2d3-link-ex8" onchange="saveData(this)">
-                    <option value="A2: Bicep Static STRETCH (30s)" data-url="https://youtu.be/P6PXY01u-DY">A2: Bicep Static STRETCH (30s)</option>
-                </select>
-                <a href="#" target="_blank" class="yt-btn" id="p3w2d3-link-ex8">Form</a>
-            </div>
-            <p class="exercise-notes">Hold a bicep stretch for 30 seconds. The stretch should be held at about a 7/10 intensity. Rest 0 min.</p>
-
-            <table class="sets-table">
-                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
-                <tr>
-                    <td>1</td><td class="type-work">Work</td><td>30s Hold</td><td>N/A</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex8-work1-w" disabled placeholder="-"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex8-work1-rpe" disabled placeholder="-"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex8-work1-done" onchange="saveData(this)"></td>
-                </tr>
-                <tr>
-                    <td>2</td><td class="type-work">Work</td><td>30s Hold</td><td>N/A</td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex8-work2-w" disabled placeholder="-"></td>
-                    <td><input type="number" class="log-input" id="p3w2d3-ex8-work2-rpe" disabled placeholder="-"></td>
-                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p3w2d3-ex8-work2-done" onchange="saveData(this)"></td>
-                </tr>
-            </table>
-        </div>
-
-    </main>
-
-    <script>
-        // UNIVERSAL AUTO-SAVE & LINK ENGINE
-        document.addEventListener("DOMContentLoaded", () => {
-            const allElements = document.querySelectorAll('select, input[type="number"]:not([disabled]), input[type="checkbox"]');
-            
-            allElements.forEach(el => {
-                const savedVal = localStorage.getItem(el.id);
-                if (savedVal !== null) {
-                    if (el.type === 'checkbox') {
-                        el.checked = (savedVal === 'true');
-                    } else {
-                        el.value = savedVal;
-                    }
-                }
-                
-                if (el.tagName === 'SELECT') {
-                    updateLink(el);
-                }
-            });
-            checkWorkoutCompletion();
-        });
-
-        function saveData(element) {
-            if (element.type === 'checkbox') {
-                localStorage.setItem(element.id, element.checked);
-                checkWorkoutCompletion();
-            } else {
-                localStorage.setItem(element.id, element.value);
-                if (element.tagName === 'SELECT') {
-                    updateLink(element);
-                }
-            }
-        }
-
-        function updateLink(selectElement) {
-            const linkId = selectElement.getAttribute('data-link-target');
-            const selectedOption = selectElement.options[selectElement.selectedIndex];
-            const newUrl = selectedOption.getAttribute('data-url');
-            
-            if(linkId && newUrl) {
-                document.getElementById(linkId).href = newUrl;
-            }
-        }
-
-        function checkWorkoutCompletion() {
-            const workCheckboxes = document.querySelectorAll('.work-checkbox');
-            let allDone = true;
-            
-            workCheckboxes.forEach(box => {
-                if (!box.checked) {
-                    allDone = false;
-                }
-            });
-
-            if (allDone) {
-                console.log("Day 2 Complete!");
-            }
-        }
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>

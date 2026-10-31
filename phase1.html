@@ -2,126 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phase 1 - Weeks</title>
-    
-    <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-        
-        body {
-            background-color: #000000;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .header-container { 
-            text-align: center; 
-            width: 100%; 
-            max-width: 600px; 
-            margin-bottom: 30px; 
-            position: relative; 
-        }
-        
-        .back-link { 
-            color: #888888; 
-            text-decoration: none; 
-            font-size: 0.95rem; 
-            position: absolute; 
-            left: 0; 
-            top: 5px; 
-            transition: color 0.2s ease;
-        }
-        
-        .back-link:hover { 
-            color: #0077ed; 
-        }
-        
-        h1 { 
-            font-size: 2rem; 
-            font-weight: bold; 
-            margin-bottom: 5px; 
-        }
-        
-        .phase-subtitle { 
-            color: #aaaaaa; 
-            font-size: 0.9rem; 
-            margin-bottom: 20px; 
-            letter-spacing: 1px; 
-        }
-        
-        hr { 
-            border: none; 
-            height: 1px; 
-            background-color: #444444; 
-            margin: 0 auto 30px auto; 
-            width: 75%; 
-        }
-
-        /* Grid for the 6 weeks */
-        .weeks-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            width: 100%;
-            max-width: 400px;
-        }
-
-        /* Standard Shiny Blue Button */
-        .shiny-btn {
-            background: linear-gradient(135deg, #0051a8, #0077ed, #00d2ff);
-            background-size: 200% auto;
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 119, 237, 0.5), inset 0 1px 2px rgba(255,255,255,0.4);
-            transition: all 0.3s ease;
-        }
-
-        .shiny-btn:hover {
-            background-position: right center;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 119, 237, 0.7), inset 0 1px 2px rgba(255,255,255,0.6);
-        }
-
-        /* Completed State: Shiny Green (To be triggered by JavaScript later) */
-        .completed-btn {
-            background: linear-gradient(135deg, #006b1b, #00b02c, #33ff66);
-            box-shadow: 0 4px 15px rgba(0, 176, 44, 0.5), inset 0 1px 2px rgba(255,255,255,0.4);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
-
-        .completed-btn:hover {
-            box-shadow: 0 6px 20px rgba(0, 176, 44, 0.7), inset 0 1px 2px rgba(255,255,255,0.6);
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>Phase 1 | Marco&#x27;s Workout Plans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts load without blocking the page, so it still works with a slow or missing connection -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="app.css">
 </head>
-<body>
+<body class="menu-page">
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="ultimate-ppl.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Ultimate PPL</a>
+            
+        </div>
+        
+    </header>
 
-    <div class="header-container">
-        <a href="ultimate-ppl.html" class="back-link">← Back</a>
-        <h1>PHASE 1</h1>
-        <div class="phase-subtitle">BASE HYPERTROPHY</div>
-        <hr>
+    <div class="page">
+        <section class="hero">
+            <p class="hero-context">Ultimate PPL</p>
+            <h1>Phase 1</h1>
+            <p class="hero-lede">Base hypertrophy. Moderate volume, moderate intensity.</p>
+        </section>
+        <nav class="tiles two" aria-label="Phase 1">
+            <a class="tile" href="week1.html" data-scope="week" data-ref="p1w1"><span class="tile-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="tile-title">Week 1</span><span class="tile-sub" data-sub></span><span class="tile-bar"><span></span></span></a>
+            <a class="tile" href="week2.html" data-scope="week" data-ref="p1w2"><span class="tile-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="tile-title">Week 2</span><span class="tile-sub" data-sub></span><span class="tile-bar"><span></span></span></a>
+            <a class="tile" href="week3.html" data-scope="week" data-ref="p1w3"><span class="tile-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="tile-title">Week 3</span><span class="tile-sub" data-sub></span><span class="tile-bar"><span></span></span></a>
+            <a class="tile" href="week4.html" data-scope="week" data-ref="p1w4"><span class="tile-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="tile-title">Week 4</span><span class="tile-sub" data-sub></span><span class="tile-bar"><span></span></span></a>
+            <a class="tile" href="week5.html" data-scope="week" data-ref="p1w5"><span class="tile-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="tile-title">Week 5</span><span class="tile-sub" data-sub></span><span class="tile-bar"><span></span></span></a>
+            <a class="tile" href="week6.html" data-scope="week" data-ref="p1w6"><span class="tile-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="tile-title">Week 6</span><span class="tile-sub" data-sub></span><span class=tile-flag>Deload</span><span class="tile-bar"><span></span></span></a>
+        </nav>
     </div>
-
-  <main class="weeks-grid">
-        <button type="button" class="shiny-btn" onclick="window.location.href='week1.html'">Week 1</button>
-        <button type="button" class="shiny-btn" onclick="window.location.href='week2.html'">Week 2</button>
-        <button type="button" class="shiny-btn" onclick="window.location.href='week3.html'">Week 3</button>
-        <button type="button" class="shiny-btn" onclick="window.location.href='week4.html'">Week 4</button>
-        <button type="button" class="shiny-btn" onclick="window.location.href='week5.html'">Week 5</button>
-        <button type="button" class="shiny-btn" onclick="window.location.href='week6.html'">Week 6 (Deload)</button>
-    </main>
+    <script src="program.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

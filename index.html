@@ -2,101 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marco's Workout Plans</title>
-    
-    <style>
-        /* CSS is placed directly in the HTML to prevent loading errors */
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-        }
-        
-        body {
-            background-color: #000000; /* Black background */
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 100vh;
-            padding: 40px 20px 20px;
-        }
-
-        .home-container {
-            text-align: center;
-            width: 100%;
-            max-width: 600px;
-            margin-top: 15vh;
-        }
-
-        h1 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        /* The Line */
-        hr {
-            border: none;
-            height: 1px;
-            background-color: #444444; 
-            margin: 0 auto 40px auto;
-            width: 75%;
-        }
-
-        /* Shiny Blue Button */
-        .shiny-btn {
-            background: linear-gradient(135deg, #0051a8, #0077ed, #00d2ff);
-            background-size: 200% auto;
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            padding: 16px 40px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-radius: 10px;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 119, 237, 0.5), inset 0 1px 2px rgba(255,255,255,0.4);
-            transition: all 0.3s ease;
-        }
-
-        .shiny-btn:hover {
-            background-position: right center;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 119, 237, 0.7), inset 0 1px 2px rgba(255,255,255,0.6);
-        }
-
-        footer {
-            padding-bottom: 15px;
-        }
-
-        /* Website Link */
-        .footer-link {
-            color: #888888;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .footer-link:hover {
-            color: #0077ed;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <title>Marco&#x27;s Workout Plans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts load without blocking the page, so it still works with a slow or missing connection -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="app.css">
 </head>
-<body>
-
-    <main class="home-container">
-        <h1>Welcome to Marco's Workout Plans</h1>
-        <hr>
-        <!-- The button doesn't go anywhere yet, as requested -->
-        <button type="button" class="shiny-btn" onclick="window.location.href='ultimate-ppl.html'">Ultimate PPL Program</button>
-    </main>
-
-    <footer>
-        <a href="https://themarcoramos.com" target="_blank" class="footer-link">themarcoramos.com</a>
-    </footer>
-
+<body class="menu-page">
+    <div class="page">
+        <section class="hero" style="padding-top: 56px;">
+            <h1>Marco's workout plans</h1>
+        </section>
+        <nav class="tiles" aria-label="Plans">
+            <a class="tile resume" id="resume" href="#" hidden><span class="tile-sub">Pick up where you left off</span><span class="tile-title" data-resume-label></span></a>
+            <a class="tile" href="ultimate-ppl.html" data-scope="program"><span class="tile-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="tile-title">Ultimate PPL program</span><span class="tile-sub">Push, pull and legs across 13 weeks</span><span class="tile-sub" data-sub></span><span class="tile-bar"><span></span></span></a>
+        </nav>
+        <footer class="foot"><a href="https://themarcoramos.com" target="_blank" rel="noopener">themarcoramos.com</a></footer>
+    </div>
+    <script src="program.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

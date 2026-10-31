@@ -12,6 +12,13 @@
     <meta name="apple-mobile-web-app-title" content="Workouts">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>Marco&#x27;s Workout Plans</title>
+    <meta name="description" content="Installable, offline-capable workout tracker: log weight and RPE for every set, get an automatic rest timer and last-time hints, run a 13-week push/pull/legs program, or build your own training days.">
+    <meta property="og:title" content="Marco's Workout Tracker">
+    <meta property="og:description" content="Log sets with weight and RPE, get an automatic rest timer, and design your own training days. Works offline; your data stays on your device.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://themarcoramos.github.io/Marcos-Workout-Tracker/">
+    <meta property="og:image" content="https://themarcoramos.github.io/Marcos-Workout-Tracker/icons/icon-512.png">
+    <meta name="twitter:card" content="summary">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Fonts load without blocking the page, so it still works with a slow or missing connection -->
@@ -23,12 +30,14 @@
     <div class="page">
         <section class="hero" style="padding-top: 56px;">
             <h1>Marco's workout plans</h1>
+            <p class="hero-lede">Log every set with weight and effort, get an automatic rest timer, and see what you lifted last time. Works offline and keeps your data on this device.</p>
         </section>
         <nav class="tiles" aria-label="Plans">
             <a class="tile resume" id="resume" href="#" hidden><span class="tile-sub">Pick up where you left off</span><span class="tile-title" data-resume-label></span></a>
             <a class="tile" href="ultimate-ppl.html" data-scope="program"><span class="tile-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="tile-title">Ultimate PPL program</span><span class="tile-sub">Push, pull and legs across 13 weeks</span><span class="tile-sub" data-sub></span><span class="tile-bar"><span></span></span></a>
             <a class="tile" href="custom.html" data-scope="custom"><span class="tile-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="tile-title">Design your own program</span><span class="tile-sub">Pick your own exercises and build your own days</span><span class="tile-sub" data-sub></span></a>
         </nav>
+        <p class="section-note" style="margin-top: 28px;">Ultimate PPL program by Jeff Nippard. This is an unofficial personal tracker, not affiliated with or endorsed by him.</p>
     </div>
     <script src="program.js"></script>
     <script src="app.js"></script>

@@ -70,6 +70,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .hero-context { color: var(--muted); font-size: 0.95rem; margin-bottom: 2px; }
 .hero h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2.6rem, 12vw, 3.6rem); line-height: 0.95; letter-spacing: 0.005em; }
 .hero-lede { color: var(--muted); margin-top: 10px; max-width: 44ch; }
+.hero-lede a { color: inherit; text-decoration: underline; }
 
 .notice {
     margin: 18px 0 0; padding: 12px 14px; border-radius: 12px;

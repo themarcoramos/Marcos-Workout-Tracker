@@ -12,6 +12,11 @@ var FONTS = "workouts-fonts-" + CACHE_VERSION;
 var PRECACHE = [
     "./",
     "index.html",
+    "custom.html",
+    "custom-edit.html",
+    "custom-day.html",
+    "custom.js",
+    "exercises.js",
     "day1-legs.html",
     "day2-push.html",
     "day3-pull.html",

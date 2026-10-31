@@ -255,11 +255,6 @@ dialog.sheet::backdrop { background: rgba(0, 0, 0, 0.68); }
 .sheet-actions button { flex: 1; min-height: 46px; border-radius: 12px; background: var(--raised); border: 1px solid var(--line-strong); font-weight: 600; }
 .sheet-actions button:hover { border-color: var(--blue); }
 
-/* ---------- footer link ---------- */
-.foot { margin-top: 40px; text-align: left; }
-.foot a { color: var(--faint); text-decoration: none; font-size: 0.95rem; }
-.foot a:hover { color: var(--blue); }
-
 @media (max-width: 380px) {
     .set { grid-template-columns: 1.5rem minmax(0, 1fr) 3.9rem 3.1rem 2.5rem; gap: 5px; }
     .reps { font-size: 1.15rem; }

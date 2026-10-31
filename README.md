@@ -10,6 +10,13 @@ Custom workout tracking web app with multi-routine tabs, embedded video form gui
 - Continue button on the home page that jumps back to your last workout.
 - Everything you log is saved in the browser (localStorage), separately for every week.
 
+## Install as an app
+The site is a PWA: it can be added to a phone's home screen and works offline (YouTube form videos still need a connection).
+- iPhone/iPad: open the site in Safari, tap Share, then Add to Home Screen.
+- Android: open in Chrome, then menu, Install app.
+- Heads up: the installed app keeps its own saved data, separate from the browser tab, so workouts logged in the browser won't appear in it.
+
 ## Files
 - `app.css` and `app.js`: shared styles and behaviour for every page.
 - `program.js`: generated list of every workout day, used for the progress tiles.
+- `manifest.webmanifest`, `sw.js`, `icons/`: what makes it installable and offline-capable. `sw.js` caches every page; if you add a new page, add it to the `PRECACHE` list (it also gets cached the first time it's visited).

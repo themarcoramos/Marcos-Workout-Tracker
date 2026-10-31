@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phase 2 Week 4 Day 4 - Full Body</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 40px 20px 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-container { text-align: center; width: 100%; max-width: 600px; margin-bottom: 30px; position: relative; }
+        .back-link { color: #888888; text-decoration: none; font-size: 0.95rem; position: absolute; left: 0; top: 5px; }
+        .back-link:hover { color: #0077ed; }
+        
+        h1 { font-size: 2rem; font-weight: bold; margin-bottom: 5px; }
+        hr { border: none; height: 1px; background-color: #444444; margin: 20px auto; width: 100%; }
+
+        .workout-list {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .exercise-card {
+            background-color: #111111;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+        
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .swap-dropdown {
+            flex-grow: 1;
+            background-color: #1c1c1e;
+            color: #0077ed;
+            border: 1px solid #0077ed;
+            padding: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        .yt-btn {
+            background: linear-gradient(135deg, #a80000, #ed0000);
+            color: white;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            box-shadow: 0 2px 8px rgba(237, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.2s ease;
+        }
+        
+        .yt-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(237, 0, 0, 0.6); }
+
+        .exercise-notes { font-size: 0.85rem; color: #888888; font-style: italic; margin-bottom: 15px; text-align: center; }
+
+        .sets-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .sets-table th { color: #aaaaaa; padding-bottom: 10px; font-weight: normal; font-size: 0.8rem; border-bottom: 1px solid #333; }
+        .sets-table td { padding: 10px 5px; vertical-align: middle; text-align: center; border-bottom: 1px solid #222; }
+        
+        .type-warmup { color: #ffaa00; font-size: 0.8rem; }
+        .type-work { color: #00d2ff; font-weight: bold; }
+
+        .log-input {
+            width: 60px;
+            background: #222222;
+            color: #ffffff;
+            border: 1px solid #444;
+            padding: 6px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .checkbox-custom { width: 20px; height: 20px; accent-color: #00b02c; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <a href="phase2-week4.html" class="back-link">← Back</a>
+        <h1>DAY 4: FULL BODY</h1>
+        <p style="color: #888; font-size: 0.9rem;">Phase 2 · Week 4 · Fill Working Sets to Complete Workout</p>
+        <hr>
+    </div>
+
+    <main class="workout-list">
+
+        <!-- EXERCISE 1: DEADLIFT -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="p2w4d4-sub-1" data-link-target="p2w4d4-link-ex1" onchange="saveData(this)">
+                    <option value="Deadlift" data-url="https://youtu.be/VL5Ab0T07e4?t=175">Deadlift</option>
+                    <option value="Trap Bar Deadlift" data-url="https://youtu.be/AWsIWeZa_Mw">Trap Bar Deadlift</option>
+                    <option value="Barbell Hip Thrust" data-url="https://youtu.be/xDmFkJxPzeM?t=97">Barbell Hip Thrust</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="p2w4d4-link-ex1">Form</a>
+            </div>
+            <p class="exercise-notes">Can pull sumo or conventional, go with whatever variation you are stronger with. Rest ~3-5 min.</p>
+
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>-</td><td class="type-warmup">Warm</td><td>3-4 Sets</td><td>-</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex1-warm-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex1-warm-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom" id="p2w4d4-ex1-warm-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>4-6 Reps</td><td>8-9</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex1-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex1-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex1-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>4-6 Reps</td><td>8-9</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex1-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex1-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex1-work2-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 2: SEATED DB SHOULDER PRESS -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="p2w4d4-sub-2" data-link-target="p2w4d4-link-ex2" onchange="saveData(this)">
+                    <option value="Seated DB Shoulder Press" data-url="https://youtu.be/ae9IxwoEpQ8?t=507">Seated DB Shoulder Press</option>
+                    <option value="Machine Shoulder Press" data-url="https://www.youtube.com/watch?v=flr4ohSl0j8">Machine Shoulder Press</option>
+                    <option value="Standing DB Arnold Press" data-url="https://www.youtube.com/watch?v=zOpA1Op0zvc">Standing DB Arnold Press</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="p2w4d4-link-ex2">Form</a>
+            </div>
+            <p class="exercise-notes">Bring the dumbbells all the way down, keep your torso upright. Rest ~3-4 min.</p>
+
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>-</td><td class="type-warmup">Warm</td><td>3 Sets</td><td>-</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex2-warm-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex2-warm-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom" id="p2w4d4-ex2-warm-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>6-8 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex2-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex2-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex2-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>6-8 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex2-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex2-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex2-work2-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 3: CLOSE-GRIP SEATED CABLE ROW -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="p2w4d4-sub-3" data-link-target="p2w4d4-link-ex3" onchange="saveData(this)">
+                    <option value="Close-Grip Seated Cable Row" data-url="https://youtu.be/PAXkl-AdJFg?t=335">Close-Grip Seated Cable Row</option>
+                    <option value="T-Bar Row" data-url="https://youtu.be/160n9FBX84s">T-Bar Row</option>
+                    <option value="Incline Chest-Supported DB Row" data-url="https://youtu.be/bsx8PIGIuaI">Incline Chest-Supported DB Row</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="p2w4d4-link-ex3">Form</a>
+            </div>
+            <p class="exercise-notes">Focus on squeezing your shoulder blades together, drive your elbows down and back. Rest ~3-4 min.</p>
+
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>-</td><td class="type-warmup">Warm</td><td>3 Sets</td><td>-</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex3-warm-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex3-warm-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom" id="p2w4d4-ex3-warm-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>4-6 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex3-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex3-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex3-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>4-6 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex3-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex3-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex3-work2-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 4: WEIGHTED DIP -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="p2w4d4-sub-4" data-link-target="p2w4d4-link-ex4" onchange="saveData(this)">
+                    <option value="Weighted Dip" data-url="https://youtu.be/yN6Q1UI_xkE?t=75">Weighted Dip</option>
+                    <option value="Machine Chest Press" data-url="https://youtu.be/k1S_Any3NIA?t=240">Machine Chest Press</option>
+                    <option value="DB Bench Press" data-url="https://youtu.be/URQ1Wn7lY3A">DB Bench Press</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="p2w4d4-link-ex4">Form</a>
+            </div>
+            <p class="exercise-notes">Tuck your elbows at 45°, lean your torso forward 15°, shoulder width or slightly wider grip. Rest ~3-4 min.</p>
+
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>-</td><td class="type-warmup">Warm</td><td>3 Sets</td><td>-</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex4-warm-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex4-warm-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom" id="p2w4d4-ex4-warm-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>4-6 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex4-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex4-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex4-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>4-6 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex4-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex4-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex4-work2-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 5: SEATED LEG CURL -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="p2w4d4-sub-5" data-link-target="p2w4d4-link-ex5" onchange="saveData(this)">
+                    <option value="Seated Leg Curl" data-url="https://youtu.be/2CMmuH4qJh0">Seated Leg Curl</option>
+                    <option value="Lying Leg Curl" data-url="https://www.youtube.com/watch?v=e_48W0vlU58&amp;feature=youtu.be">Lying Leg Curl</option>
+                    <option value="Nordic Ham Curl" data-url="https://youtu.be/qVek72z3F1U?t=683">Nordic Ham Curl</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="p2w4d4-link-ex5">Form</a>
+            </div>
+            <p class="exercise-notes">Focus on squeezing your hamstrings to move the weight. Rest ~2-3 min.</p>
+
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>-</td><td class="type-warmup">Warm</td><td>2 Sets</td><td>-</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex5-warm-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex5-warm-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom" id="p2w4d4-ex5-warm-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>4-6 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex5-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex5-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex5-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>4-6 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex5-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex5-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex5-work2-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- EXERCISE 6: MACHINE LATERAL RAISE -->
+        <div class="exercise-card">
+            <div class="card-header">
+                <select class="swap-dropdown" id="p2w4d4-sub-6" data-link-target="p2w4d4-link-ex6" onchange="saveData(this)">
+                    <option value="Machine Lateral Raise" data-url="https://youtu.be/-9QsrJ542ao">Machine Lateral Raise</option>
+                    <option value="DB Lateral Raise" data-url="https://youtu.be/v_ZkxWzYnMc?t=215">DB Lateral Raise</option>
+                    <option value="Cable Lateral Raise" data-url="https://youtu.be/SJqInYJcg5k?t=653">Cable Lateral Raise</option>
+                </select>
+                <a href="#" target="_blank" class="yt-btn" id="p2w4d4-link-ex6">Form</a>
+            </div>
+            <p class="exercise-notes">Focus on squeezing your lateral delt to move the weight. Rest ~2-3 min.</p>
+
+            <table class="sets-table">
+                <tr><th>Set</th><th>Type</th><th>Target</th><th>Target RPE</th><th>Weight (lbs)</th><th>Log RPE</th><th>Done</th></tr>
+                <tr>
+                    <td>-</td><td class="type-warmup">Warm</td><td>2 Sets</td><td>-</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex6-warm-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex6-warm-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom" id="p2w4d4-ex6-warm-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>1</td><td class="type-work">Work</td><td>6-8 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex6-work1-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex6-work1-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex6-work1-done" onchange="saveData(this)"></td>
+                </tr>
+                <tr>
+                    <td>2</td><td class="type-work">Work</td><td>6-8 Reps</td><td>10</td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex6-work2-w" oninput="saveData(this)"></td>
+                    <td><input type="number" class="log-input" id="p2w4d4-ex6-work2-rpe" oninput="saveData(this)"></td>
+                    <td><input type="checkbox" class="checkbox-custom work-checkbox" id="p2w4d4-ex6-work2-done" onchange="saveData(this)"></td>
+                </tr>
+            </table>
+        </div>
+
+    </main>
+
+    <script>
+        // UNIVERSAL AUTO-SAVE & LINK ENGINE
+        document.addEventListener("DOMContentLoaded", () => {
+            const allElements = document.querySelectorAll('select, input[type="number"]:not([disabled]), input[type="checkbox"]');
+            
+            allElements.forEach(el => {
+                const savedVal = localStorage.getItem(el.id);
+                if (savedVal !== null) {
+                    if (el.type === 'checkbox') {
+                        el.checked = (savedVal === 'true');
+                    } else {
+                        el.value = savedVal;
+                    }
+                }
+                
+                if (el.tagName === 'SELECT') {
+                    updateLink(el);
+                }
+            });
+            checkWorkoutCompletion();
+        });
+
+        function saveData(element) {
+            if (element.type === 'checkbox') {
+                localStorage.setItem(element.id, element.checked);
+                checkWorkoutCompletion();
+            } else {
+                localStorage.setItem(element.id, element.value);
+                if (element.tagName === 'SELECT') {
+                    updateLink(element);
+                }
+            }
+        }
+
+        function updateLink(selectElement) {
+            const linkId = selectElement.getAttribute('data-link-target');
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            const newUrl = selectedOption.getAttribute('data-url');
+            
+            if(linkId && newUrl) {
+                document.getElementById(linkId).href = newUrl;
+            }
+        }
+
+        function checkWorkoutCompletion() {
+            const workCheckboxes = document.querySelectorAll('.work-checkbox');
+            let allDone = true;
+            
+            workCheckboxes.forEach(box => {
+                if (!box.checked) {
+                    allDone = false;
+                }
+            });
+
+            if (allDone) {
+                console.log("Day 2 Complete!");
+            }
+        }
+    </script>
+</body>
+</html>

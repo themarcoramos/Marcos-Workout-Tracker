@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Source artwork for the app icons. Everything sits inside the central safe zone,
+       so the same drawing works as a normal icon and as an Android maskable icon. -->
+  <rect width="512" height="512" fill="#000000"/>
+  <g transform="rotate(-45 256 256)" fill="#2f8cff">
+    <rect x="150" y="242" width="212" height="28" rx="8"/>
+    <rect x="120" y="161" width="44" height="190" rx="14"/>
+    <rect x="348" y="161" width="44" height="190" rx="14"/>
+    <rect x="84" y="196" width="32" height="120" rx="12"/>
+    <rect x="396" y="196" width="32" height="120" rx="12"/>
+  </g>
+</svg>

@@ -391,4 +391,17 @@
     document.addEventListener("DOMContentLoaded", function () {
         if (document.querySelector(".lift")) { initDay(); } else { initMenu(); }
     });
+
+    // ---------- installable app: offline support ----------
+    // Pages all live in one folder, so "sw.js" resolves next to them wherever the site is hosted.
+    if ("serviceWorker" in navigator && window.isSecureContext) {
+        window.addEventListener("load", function () {
+            navigator.serviceWorker.register("sw.js").catch(function () { /* offline support is optional */ });
+        });
+    }
+    // When opened from the home screen, ask the browser not to clear saved workouts to free space.
+    var installed = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true;
+    if (installed && navigator.storage && navigator.storage.persist) {
+        try { navigator.storage.persist(); } catch (e) { /* ignore */ }
+    }
 })();

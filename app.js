@@ -313,7 +313,8 @@
             b.addEventListener("click", function () { startRest(parseInt(b.getAttribute("data-hold"), 10) || 30, "Hold"); });
         });
         updateProgress();
-        store.set("lastDay", JSON.stringify({ href: PAGE, label: document.body.dataset.label || "", t: Date.now() }));
+        // Pages that are the same file with different contents (Design your own program) say where "resume" should go.
+        store.set("lastDay", JSON.stringify({ href: document.body.dataset.resume || PAGE, label: document.body.dataset.label || "", t: Date.now() }));
     }
 
     // ---------- menu pages: progress on tiles ----------
@@ -367,6 +368,9 @@
                     if (st.total && st.done === st.total) { wd++; }
                 });
                 setTile(tile, setsDone, sets, wd === ph.weeks.length ? "Complete" : wd + " of " + ph.weeks.length + " weeks done");
+            } else if (scope === "custom") {
+                var cp = readJSON("custom:program"), nd = cp && Array.isArray(cp.days) ? cp.days.length : 0;
+                setTile(tile, 0, 0, nd ? plural(nd, "day") + " built" : "Nothing built yet");
             } else if (scope === "program") {
                 var wk = 0, nw = 0, st2 = 0, dn2 = 0;
                 P.phases.forEach(function (p) { p.weeks.forEach(function (w) {
@@ -379,7 +383,14 @@
         var resume = document.getElementById("resume");
         if (resume) {
             var last = readJSON("lastDay");
-            if (last && last.href && byFile[last.href]) {
+            var customDay = null;
+            if (last && typeof last.href === "string") {
+                var cm = /^custom-day\.html\?d=([A-Za-z0-9]+)$/.exec(last.href), cprog = readJSON("custom:program");
+                if (cm && cprog && Array.isArray(cprog.days)) {
+                    customDay = cprog.days.filter(function (d) { return d && d.id === cm[1]; })[0] || null;
+                }
+            }
+            if (last && last.href && (byFile[last.href] || customDay)) {
                 resume.href = last.href;
                 var lab = resume.querySelector("[data-resume-label]");
                 if (lab) { lab.textContent = last.label; }

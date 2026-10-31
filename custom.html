@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Workouts">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Design your own program | Marco&#x27;s Workout Plans</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Fonts load without blocking the page, so it still works with a slow or missing connection -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap"></noscript>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body class="menu-page" data-view="home">
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="index.html" class="back-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Home</a>
+        </div>
+    </header>
+
+    <div class="page">
+        <section class="hero">
+            <p class="hero-context">Your program</p>
+            <h1>Design your own program</h1>
+            <p class="hero-lede">Pick the exercises you want, build your own training days, then log them like any other workout. Everything is saved on this device.</p>
+        </section>
+
+        <div class="tiles" id="days" aria-live="polite"></div>
+
+        <h2 class="section-title">Add a day</h2>
+        <p class="section-note">Start from a template and change anything you like, or begin with a blank day.</p>
+        <div class="chip-row" id="presets" role="group" aria-label="Day templates">
+            <button type="button" class="pick-chip" data-preset="Push">Push</button>
+            <button type="button" class="pick-chip" data-preset="Pull">Pull</button>
+            <button type="button" class="pick-chip" data-preset="Legs">Legs</button>
+            <button type="button" class="pick-chip" data-preset="Upper">Upper body</button>
+            <button type="button" class="pick-chip" data-preset="Lower">Lower body</button>
+            <button type="button" class="pick-chip" data-preset="Full body">Full body</button>
+            <button type="button" class="pick-chip" data-preset="Blank">Blank day</button>
+        </div>
+        <div id="recent"></div>
+        <p class="notice" id="save-error" hidden>Your browser isn't letting this page save. Check that private browsing is off, then try again.</p>
+    </div>
+    <script src="exercises.js"></script>
+    <script src="custom.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
